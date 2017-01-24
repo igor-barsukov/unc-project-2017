@@ -1,0 +1,1 @@
+For storing materials regarding db structure.
