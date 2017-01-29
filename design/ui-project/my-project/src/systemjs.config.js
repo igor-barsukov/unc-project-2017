@@ -1,7 +1,7 @@
 (function (global) {
    // System.config({
        let paths = {
-            // псевдоним для пути к модулям
+            //псевдоним для пути к модулям
             'npm:': 'node_modules/'
         };
         // указываем загрузчику System, где искать модули
