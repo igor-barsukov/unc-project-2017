@@ -1,11 +1,14 @@
 {
   "name": "helloapp",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "lite": "lite-server",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w"
+      "start": "node index.js",
+      "test": "mocha",
+      "postinstall": "bower install && grunt build"
   },
   "dependencies": {
     "@angular/platform-browser-dynamic": "~2.4.0",
