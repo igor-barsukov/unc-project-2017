@@ -5,18 +5,14 @@
 let express = require('express');
 let exp = express();
 
-exp.configure(function() {
-    exp.engine('html', require('uinexpress').__express), // Используем функцию "template" библиотеки underscore для рендеринга
-        exp.set('view engine', 'html'),
-      // exp.set('views', __dirname + "src"),
-        // exp.set("view options", {layout: 'layout.html'}),   // Файл layout.html по умолчанию будет оборачивать все шаблоны
-        exp.use(express.static(__dirname + "src"))   // Делаем файлы из папки public доступными на сайте
-});
+let port = process.env.PORT || 3000;
+exp.use(express.static(__dirname));
 
 exp.get('/', function(req, res){          // Обрабатываем запрос корневой страницы "/"
-    res.render('src/index.html')
+    res.render("./src/index.html");
 });
-exp.set('port', process.env.port || 3000);
-// Запускаем сервер на 5000 порту, если не указана переменная окружения "port"
-exp.listen(3000);
-//console.log("Listening at " + port);
+
+exp.listen(port, function () {
+    console.log("app running")
+
+});

@@ -5,7 +5,9 @@
     "node": "6.9.4",
     "npm": "3.10.10"
   },
-  "main": "src/systemjs.config.js",
+  "scripts":{
+    "start": "node appl.js"
+  },
   "dependencies": {
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/common": "~2.4.0",
