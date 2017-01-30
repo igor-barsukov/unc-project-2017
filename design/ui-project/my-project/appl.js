@@ -10,13 +10,14 @@ exp.configure(function() {
         exp.set('view engine', 'html'),
       // exp.set('views', __dirname + "src"),
         // exp.set("view options", {layout: 'layout.html'}),   // Файл layout.html по умолчанию будет оборачивать все шаблоны
-        exp.use(express.static(__dirname + "src"))     // Делаем файлы из папки public доступными на сайте
+        exp.use(express.static(__dirname + "src")),
+    // Делаем файлы из папки public доступными на сайте
 });
 
 exp.get('/', function(req, res){          // Обрабатываем запрос корневой страницы "/"
     res.render('src/index.html')
 });
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 3000;
 exp.listen(port);                           // Запускаем сервер на 5000 порту, если не указана переменная окружения "port"
 console.log("Listening at " + port);
