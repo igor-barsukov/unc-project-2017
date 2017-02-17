@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.1
 -- Dumped by pg_dump version 9.6.1
 
--- Started on 2017-02-16 09:35:56 MSK
+-- Started on 2017-02-17 07:56:05 MSK
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -25,7 +25,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2561 (class 0 OID 0)
+-- TOC entry 2567 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
@@ -73,7 +73,7 @@ CREATE SEQUENCE "USER_id_seq"
 
 
 --
--- TOC entry 2562 (class 0 OID 0)
+-- TOC entry 2568 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: USER_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -109,7 +109,7 @@ CREATE SEQUENCE albums_id_seq
 
 
 --
--- TOC entry 2563 (class 0 OID 0)
+-- TOC entry 2569 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: albums_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -145,7 +145,7 @@ CREATE SEQUENCE chat_travel_id_seq
 
 
 --
--- TOC entry 2564 (class 0 OID 0)
+-- TOC entry 2570 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: chat_travel_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -161,7 +161,7 @@ ALTER SEQUENCE chat_travel_id_seq OWNED BY chat_travel.id;
 CREATE TABLE cities (
     citi_id integer NOT NULL,
     name character varying(50) NOT NULL,
-    country_id integer NOT NULL
+    state_id integer NOT NULL
 );
 
 
@@ -179,7 +179,7 @@ CREATE SEQUENCE cities_citi_id_seq
 
 
 --
--- TOC entry 2565 (class 0 OID 0)
+-- TOC entry 2571 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: cities_citi_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -215,7 +215,7 @@ CREATE SEQUENCE comment_photo_id_seq
 
 
 --
--- TOC entry 2566 (class 0 OID 0)
+-- TOC entry 2572 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: comment_photo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -248,7 +248,7 @@ CREATE SEQUENCE countries_country_id_seq
 
 
 --
--- TOC entry 2567 (class 0 OID 0)
+-- TOC entry 2573 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: countries_country_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -262,47 +262,24 @@ ALTER SEQUENCE countries_country_id_seq OWNED BY countries.country_id;
 --
 
 CREATE TABLE friends (
-    id integer NOT NULL,
     user_1 integer NOT NULL,
     user_2 integer NOT NULL
 );
 
 
 --
--- TOC entry 198 (class 1259 OID 33398)
--- Name: friends_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE friends_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- TOC entry 2568 (class 0 OID 0)
--- Dependencies: 198
--- Name: friends_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE friends_id_seq OWNED BY friends.id;
-
-
---
--- TOC entry 214 (class 1259 OID 33638)
+-- TOC entry 213 (class 1259 OID 33638)
 -- Name: genders; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE genders (
     id integer NOT NULL,
-    gender character varying(10) NOT NULL
+    gender character varying(20) NOT NULL
 );
 
 
 --
--- TOC entry 213 (class 1259 OID 33636)
+-- TOC entry 212 (class 1259 OID 33636)
 -- Name: genders_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -315,8 +292,8 @@ CREATE SEQUENCE genders_id_seq
 
 
 --
--- TOC entry 2569 (class 0 OID 0)
--- Dependencies: 213
+-- TOC entry 2574 (class 0 OID 0)
+-- Dependencies: 212
 -- Name: genders_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -324,7 +301,7 @@ ALTER SEQUENCE genders_id_seq OWNED BY genders.id;
 
 
 --
--- TOC entry 199 (class 1259 OID 33400)
+-- TOC entry 198 (class 1259 OID 33400)
 -- Name: messages; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -338,7 +315,7 @@ CREATE TABLE messages (
 
 
 --
--- TOC entry 200 (class 1259 OID 33406)
+-- TOC entry 199 (class 1259 OID 33406)
 -- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -351,8 +328,8 @@ CREATE SEQUENCE messages_id_seq
 
 
 --
--- TOC entry 2570 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 2575 (class 0 OID 0)
+-- Dependencies: 199
 -- Name: messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -360,7 +337,7 @@ ALTER SEQUENCE messages_id_seq OWNED BY messages.id;
 
 
 --
--- TOC entry 201 (class 1259 OID 33408)
+-- TOC entry 200 (class 1259 OID 33408)
 -- Name: photos; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -373,7 +350,7 @@ CREATE TABLE photos (
 
 
 --
--- TOC entry 202 (class 1259 OID 33411)
+-- TOC entry 201 (class 1259 OID 33411)
 -- Name: photos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -386,8 +363,8 @@ CREATE SEQUENCE photos_id_seq
 
 
 --
--- TOC entry 2571 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 2576 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: photos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -395,7 +372,7 @@ ALTER SEQUENCE photos_id_seq OWNED BY photos.id;
 
 
 --
--- TOC entry 203 (class 1259 OID 33413)
+-- TOC entry 202 (class 1259 OID 33413)
 -- Name: plans_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -408,7 +385,7 @@ CREATE SEQUENCE plans_id_seq
 
 
 --
--- TOC entry 204 (class 1259 OID 33415)
+-- TOC entry 203 (class 1259 OID 33415)
 -- Name: plans; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -427,7 +404,7 @@ CREATE TABLE plans (
 
 
 --
--- TOC entry 205 (class 1259 OID 33422)
+-- TOC entry 204 (class 1259 OID 33422)
 -- Name: post_of_travel; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -441,7 +418,7 @@ CREATE TABLE post_of_travel (
 
 
 --
--- TOC entry 206 (class 1259 OID 33428)
+-- TOC entry 205 (class 1259 OID 33428)
 -- Name: post_of_travel_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -454,8 +431,8 @@ CREATE SEQUENCE post_of_travel_id_seq
 
 
 --
--- TOC entry 2572 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 2577 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: post_of_travel_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -463,7 +440,7 @@ ALTER SEQUENCE post_of_travel_id_seq OWNED BY post_of_travel.id;
 
 
 --
--- TOC entry 207 (class 1259 OID 33430)
+-- TOC entry 206 (class 1259 OID 33430)
 -- Name: roles; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -474,7 +451,7 @@ CREATE TABLE roles (
 
 
 --
--- TOC entry 208 (class 1259 OID 33433)
+-- TOC entry 207 (class 1259 OID 33433)
 -- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -487,8 +464,8 @@ CREATE SEQUENCE roles_id_seq
 
 
 --
--- TOC entry 2573 (class 0 OID 0)
--- Dependencies: 208
+-- TOC entry 2578 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -496,7 +473,41 @@ ALTER SEQUENCE roles_id_seq OWNED BY roles.id;
 
 
 --
--- TOC entry 209 (class 1259 OID 33435)
+-- TOC entry 215 (class 1259 OID 41293)
+-- Name: states; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE states (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    country_id integer NOT NULL
+);
+
+
+--
+-- TOC entry 214 (class 1259 OID 41291)
+-- Name: states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE states_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2579 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE states_id_seq OWNED BY states.id;
+
+
+--
+-- TOC entry 208 (class 1259 OID 33435)
 -- Name: travels; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -511,7 +522,7 @@ CREATE TABLE travels (
 
 
 --
--- TOC entry 210 (class 1259 OID 33441)
+-- TOC entry 209 (class 1259 OID 33441)
 -- Name: travels_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -524,8 +535,8 @@ CREATE SEQUENCE travels_id_seq
 
 
 --
--- TOC entry 2574 (class 0 OID 0)
--- Dependencies: 210
+-- TOC entry 2580 (class 0 OID 0)
+-- Dependencies: 209
 -- Name: travels_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -533,7 +544,7 @@ ALTER SEQUENCE travels_id_seq OWNED BY travels.id;
 
 
 --
--- TOC entry 211 (class 1259 OID 33443)
+-- TOC entry 210 (class 1259 OID 33443)
 -- Name: user_to_travel; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -546,7 +557,7 @@ CREATE TABLE user_to_travel (
 
 
 --
--- TOC entry 212 (class 1259 OID 33446)
+-- TOC entry 211 (class 1259 OID 33446)
 -- Name: user_to_travel_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -559,8 +570,8 @@ CREATE SEQUENCE user_to_travel_id_seq
 
 
 --
--- TOC entry 2575 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 2581 (class 0 OID 0)
+-- Dependencies: 211
 -- Name: user_to_travel_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -568,7 +579,7 @@ ALTER SEQUENCE user_to_travel_id_seq OWNED BY user_to_travel.id;
 
 
 --
--- TOC entry 2360 (class 2604 OID 33449)
+-- TOC entry 2364 (class 2604 OID 33449)
 -- Name: albums id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -576,7 +587,7 @@ ALTER TABLE ONLY albums ALTER COLUMN id SET DEFAULT nextval('albums_id_seq'::reg
 
 
 --
--- TOC entry 2361 (class 2604 OID 33450)
+-- TOC entry 2365 (class 2604 OID 33450)
 -- Name: chat_travel id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -584,7 +595,7 @@ ALTER TABLE ONLY chat_travel ALTER COLUMN id SET DEFAULT nextval('chat_travel_id
 
 
 --
--- TOC entry 2362 (class 2604 OID 33451)
+-- TOC entry 2366 (class 2604 OID 33451)
 -- Name: cities citi_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -592,7 +603,7 @@ ALTER TABLE ONLY cities ALTER COLUMN citi_id SET DEFAULT nextval('cities_citi_id
 
 
 --
--- TOC entry 2363 (class 2604 OID 33452)
+-- TOC entry 2367 (class 2604 OID 33452)
 -- Name: comment_photo id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -600,7 +611,7 @@ ALTER TABLE ONLY comment_photo ALTER COLUMN id SET DEFAULT nextval('comment_phot
 
 
 --
--- TOC entry 2364 (class 2604 OID 33453)
+-- TOC entry 2368 (class 2604 OID 33453)
 -- Name: countries country_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -608,15 +619,7 @@ ALTER TABLE ONLY countries ALTER COLUMN country_id SET DEFAULT nextval('countrie
 
 
 --
--- TOC entry 2365 (class 2604 OID 33454)
--- Name: friends id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY friends ALTER COLUMN id SET DEFAULT nextval('friends_id_seq'::regclass);
-
-
---
--- TOC entry 2373 (class 2604 OID 33641)
+-- TOC entry 2376 (class 2604 OID 33641)
 -- Name: genders id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -624,7 +627,7 @@ ALTER TABLE ONLY genders ALTER COLUMN id SET DEFAULT nextval('genders_id_seq'::r
 
 
 --
--- TOC entry 2366 (class 2604 OID 33455)
+-- TOC entry 2369 (class 2604 OID 33455)
 -- Name: messages id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -632,7 +635,7 @@ ALTER TABLE ONLY messages ALTER COLUMN id SET DEFAULT nextval('messages_id_seq':
 
 
 --
--- TOC entry 2367 (class 2604 OID 33456)
+-- TOC entry 2370 (class 2604 OID 33456)
 -- Name: photos id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -640,7 +643,7 @@ ALTER TABLE ONLY photos ALTER COLUMN id SET DEFAULT nextval('photos_id_seq'::reg
 
 
 --
--- TOC entry 2369 (class 2604 OID 33457)
+-- TOC entry 2372 (class 2604 OID 33457)
 -- Name: post_of_travel id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -648,7 +651,7 @@ ALTER TABLE ONLY post_of_travel ALTER COLUMN id SET DEFAULT nextval('post_of_tra
 
 
 --
--- TOC entry 2370 (class 2604 OID 33458)
+-- TOC entry 2373 (class 2604 OID 33458)
 -- Name: roles id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -656,7 +659,15 @@ ALTER TABLE ONLY roles ALTER COLUMN id SET DEFAULT nextval('roles_id_seq'::regcl
 
 
 --
--- TOC entry 2371 (class 2604 OID 33459)
+-- TOC entry 2377 (class 2604 OID 41296)
+-- Name: states id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY states ALTER COLUMN id SET DEFAULT nextval('states_id_seq'::regclass);
+
+
+--
+-- TOC entry 2374 (class 2604 OID 33459)
 -- Name: travels id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -664,7 +675,7 @@ ALTER TABLE ONLY travels ALTER COLUMN id SET DEFAULT nextval('travels_id_seq'::r
 
 
 --
--- TOC entry 2359 (class 2604 OID 33448)
+-- TOC entry 2363 (class 2604 OID 33448)
 -- Name: user id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -672,7 +683,7 @@ ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('"USER_id_seq"'::reg
 
 
 --
--- TOC entry 2372 (class 2604 OID 33460)
+-- TOC entry 2375 (class 2604 OID 33460)
 -- Name: user_to_travel id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -680,7 +691,7 @@ ALTER TABLE ONLY user_to_travel ALTER COLUMN id SET DEFAULT nextval('user_to_tra
 
 
 --
--- TOC entry 2376 (class 2606 OID 33462)
+-- TOC entry 2380 (class 2606 OID 33462)
 -- Name: user USER_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -689,7 +700,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2378 (class 2606 OID 33464)
+-- TOC entry 2382 (class 2606 OID 33464)
 -- Name: albums albums_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -698,7 +709,7 @@ ALTER TABLE ONLY albums
 
 
 --
--- TOC entry 2383 (class 2606 OID 33466)
+-- TOC entry 2387 (class 2606 OID 33466)
 -- Name: chat_travel chat_travel_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -707,7 +718,7 @@ ALTER TABLE ONLY chat_travel
 
 
 --
--- TOC entry 2386 (class 2606 OID 33468)
+-- TOC entry 2390 (class 2606 OID 33468)
 -- Name: cities cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -716,7 +727,7 @@ ALTER TABLE ONLY cities
 
 
 --
--- TOC entry 2388 (class 2606 OID 33470)
+-- TOC entry 2392 (class 2606 OID 33470)
 -- Name: comment_photo comment_photo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -725,7 +736,7 @@ ALTER TABLE ONLY comment_photo
 
 
 --
--- TOC entry 2390 (class 2606 OID 33472)
+-- TOC entry 2394 (class 2606 OID 33472)
 -- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -734,16 +745,7 @@ ALTER TABLE ONLY countries
 
 
 --
--- TOC entry 2392 (class 2606 OID 33474)
--- Name: friends friends_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY friends
-    ADD CONSTRAINT friends_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2415 (class 2606 OID 33643)
+-- TOC entry 2417 (class 2606 OID 33643)
 -- Name: genders genders_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -752,7 +754,7 @@ ALTER TABLE ONLY genders
 
 
 --
--- TOC entry 2399 (class 2606 OID 33476)
+-- TOC entry 2401 (class 2606 OID 33476)
 -- Name: messages messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -761,7 +763,7 @@ ALTER TABLE ONLY messages
 
 
 --
--- TOC entry 2401 (class 2606 OID 33478)
+-- TOC entry 2403 (class 2606 OID 33478)
 -- Name: photos photos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -770,7 +772,7 @@ ALTER TABLE ONLY photos
 
 
 --
--- TOC entry 2403 (class 2606 OID 33480)
+-- TOC entry 2405 (class 2606 OID 33480)
 -- Name: plans plans_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -779,7 +781,7 @@ ALTER TABLE ONLY plans
 
 
 --
--- TOC entry 2405 (class 2606 OID 33482)
+-- TOC entry 2407 (class 2606 OID 33482)
 -- Name: post_of_travel post_of_travel_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -788,7 +790,7 @@ ALTER TABLE ONLY post_of_travel
 
 
 --
--- TOC entry 2408 (class 2606 OID 33484)
+-- TOC entry 2410 (class 2606 OID 33484)
 -- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -797,7 +799,16 @@ ALTER TABLE ONLY roles
 
 
 --
--- TOC entry 2410 (class 2606 OID 33486)
+-- TOC entry 2420 (class 2606 OID 41298)
+-- Name: states states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY states
+    ADD CONSTRAINT states_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2412 (class 2606 OID 33486)
 -- Name: travels travels_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -806,7 +817,7 @@ ALTER TABLE ONLY travels
 
 
 --
--- TOC entry 2412 (class 2606 OID 33488)
+-- TOC entry 2414 (class 2606 OID 33488)
 -- Name: user_to_travel user_to_travel_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -815,7 +826,7 @@ ALTER TABLE ONLY user_to_travel
 
 
 --
--- TOC entry 2379 (class 1259 OID 33489)
+-- TOC entry 2383 (class 1259 OID 33489)
 -- Name: CHAT_TRAVEL_ID_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -823,7 +834,7 @@ CREATE INDEX "CHAT_TRAVEL_ID_index" ON chat_travel USING btree (id);
 
 
 --
--- TOC entry 2380 (class 1259 OID 33490)
+-- TOC entry 2384 (class 1259 OID 33490)
 -- Name: CHAT_TRAVEL_SENDER_ID_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -831,7 +842,7 @@ CREATE INDEX "CHAT_TRAVEL_SENDER_ID_index" ON chat_travel USING btree (sender_id
 
 
 --
--- TOC entry 2381 (class 1259 OID 33491)
+-- TOC entry 2385 (class 1259 OID 33491)
 -- Name: CHAT_TRAVEL_SEND_TIME_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -839,15 +850,7 @@ CREATE INDEX "CHAT_TRAVEL_SEND_TIME_index" ON chat_travel USING btree (send_time
 
 
 --
--- TOC entry 2384 (class 1259 OID 33492)
--- Name: CITIES_NAME_uindex; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX "CITIES_NAME_uindex" ON cities USING btree (name);
-
-
---
--- TOC entry 2395 (class 1259 OID 33493)
+-- TOC entry 2397 (class 1259 OID 33493)
 -- Name: MESSAGES_ID_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -855,7 +858,7 @@ CREATE INDEX "MESSAGES_ID_index" ON messages USING btree (id);
 
 
 --
--- TOC entry 2396 (class 1259 OID 33494)
+-- TOC entry 2398 (class 1259 OID 33494)
 -- Name: MESSAGES_RECIPIENT_ID_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -863,7 +866,7 @@ CREATE INDEX "MESSAGES_RECIPIENT_ID_index" ON messages USING btree (recipient_id
 
 
 --
--- TOC entry 2397 (class 1259 OID 33495)
+-- TOC entry 2399 (class 1259 OID 33495)
 -- Name: MESSAGES_SENDER_ID_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -871,7 +874,7 @@ CREATE INDEX "MESSAGES_SENDER_ID_index" ON messages USING btree (sender_id);
 
 
 --
--- TOC entry 2406 (class 1259 OID 33496)
+-- TOC entry 2408 (class 1259 OID 33496)
 -- Name: ROLES_NAME_uindex; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -879,7 +882,7 @@ CREATE UNIQUE INDEX "ROLES_NAME_uindex" ON roles USING btree (name);
 
 
 --
--- TOC entry 2374 (class 1259 OID 33497)
+-- TOC entry 2378 (class 1259 OID 33497)
 -- Name: USER_EMAIL_uindex; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -887,7 +890,15 @@ CREATE UNIQUE INDEX "USER_EMAIL_uindex" ON "user" USING btree (email);
 
 
 --
--- TOC entry 2393 (class 1259 OID 33498)
+-- TOC entry 2388 (class 1259 OID 41290)
+-- Name: cities_name_index; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX cities_name_index ON cities USING btree (name);
+
+
+--
+-- TOC entry 2395 (class 1259 OID 33498)
 -- Name: friends_user_1_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -895,7 +906,7 @@ CREATE INDEX friends_user_1_index ON friends USING btree (user_1);
 
 
 --
--- TOC entry 2394 (class 1259 OID 33499)
+-- TOC entry 2396 (class 1259 OID 33499)
 -- Name: friends_user_2_index; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -903,7 +914,7 @@ CREATE INDEX friends_user_2_index ON friends USING btree (user_2);
 
 
 --
--- TOC entry 2413 (class 1259 OID 33644)
+-- TOC entry 2415 (class 1259 OID 41310)
 -- Name: genders_gender_uindex; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -911,7 +922,15 @@ CREATE UNIQUE INDEX genders_gender_uindex ON genders USING btree (gender);
 
 
 --
--- TOC entry 2419 (class 2606 OID 33500)
+-- TOC entry 2418 (class 1259 OID 41311)
+-- Name: states_name_index; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX states_name_index ON states USING btree (name);
+
+
+--
+-- TOC entry 2424 (class 2606 OID 33500)
 -- Name: albums albums_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -920,7 +939,7 @@ ALTER TABLE ONLY albums
 
 
 --
--- TOC entry 2420 (class 2606 OID 33606)
+-- TOC entry 2425 (class 2606 OID 33606)
 -- Name: chat_travel chat_travel_travels_travel_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -929,7 +948,7 @@ ALTER TABLE ONLY chat_travel
 
 
 --
--- TOC entry 2421 (class 2606 OID 33611)
+-- TOC entry 2426 (class 2606 OID 33611)
 -- Name: chat_travel chat_travel_user_sender_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -938,16 +957,16 @@ ALTER TABLE ONLY chat_travel
 
 
 --
--- TOC entry 2422 (class 2606 OID 33515)
--- Name: cities cities_countries_country_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 2427 (class 2606 OID 41305)
+-- Name: cities cities_states_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities
-    ADD CONSTRAINT cities_countries_country_id_fk FOREIGN KEY (country_id) REFERENCES countries(country_id);
+    ADD CONSTRAINT cities_states_id_fk FOREIGN KEY (state_id) REFERENCES states(id);
 
 
 --
--- TOC entry 2423 (class 2606 OID 33616)
+-- TOC entry 2428 (class 2606 OID 33616)
 -- Name: comment_photo comment_photo_photos_photo_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -956,7 +975,7 @@ ALTER TABLE ONLY comment_photo
 
 
 --
--- TOC entry 2424 (class 2606 OID 33621)
+-- TOC entry 2429 (class 2606 OID 33621)
 -- Name: comment_photo comment_photo_user_commentator_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -965,7 +984,7 @@ ALTER TABLE ONLY comment_photo
 
 
 --
--- TOC entry 2425 (class 2606 OID 33626)
+-- TOC entry 2430 (class 2606 OID 33626)
 -- Name: friends friends_user_user_1_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -974,7 +993,7 @@ ALTER TABLE ONLY friends
 
 
 --
--- TOC entry 2426 (class 2606 OID 33631)
+-- TOC entry 2431 (class 2606 OID 33631)
 -- Name: friends friends_user_user_2_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -983,7 +1002,7 @@ ALTER TABLE ONLY friends
 
 
 --
--- TOC entry 2427 (class 2606 OID 33540)
+-- TOC entry 2432 (class 2606 OID 33540)
 -- Name: messages messages_sender_id_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -992,7 +1011,7 @@ ALTER TABLE ONLY messages
 
 
 --
--- TOC entry 2428 (class 2606 OID 33545)
+-- TOC entry 2433 (class 2606 OID 33545)
 -- Name: messages messages_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1001,7 +1020,7 @@ ALTER TABLE ONLY messages
 
 
 --
--- TOC entry 2429 (class 2606 OID 33550)
+-- TOC entry 2434 (class 2606 OID 33550)
 -- Name: photos photos_albums_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1010,7 +1029,7 @@ ALTER TABLE ONLY photos
 
 
 --
--- TOC entry 2430 (class 2606 OID 33555)
+-- TOC entry 2435 (class 2606 OID 33555)
 -- Name: photos photos_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1019,7 +1038,7 @@ ALTER TABLE ONLY photos
 
 
 --
--- TOC entry 2431 (class 2606 OID 33560)
+-- TOC entry 2436 (class 2606 OID 33560)
 -- Name: plans plans_cities_citi_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1028,7 +1047,7 @@ ALTER TABLE ONLY plans
 
 
 --
--- TOC entry 2432 (class 2606 OID 33565)
+-- TOC entry 2437 (class 2606 OID 33565)
 -- Name: plans plans_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1037,7 +1056,7 @@ ALTER TABLE ONLY plans
 
 
 --
--- TOC entry 2433 (class 2606 OID 33570)
+-- TOC entry 2438 (class 2606 OID 33570)
 -- Name: post_of_travel post_of_travel_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1046,7 +1065,7 @@ ALTER TABLE ONLY post_of_travel
 
 
 --
--- TOC entry 2434 (class 2606 OID 33575)
+-- TOC entry 2439 (class 2606 OID 33575)
 -- Name: post_of_travel post_of_travel_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1055,7 +1074,16 @@ ALTER TABLE ONLY post_of_travel
 
 
 --
--- TOC entry 2416 (class 2606 OID 33580)
+-- TOC entry 2443 (class 2606 OID 41299)
+-- Name: states states_countries_country_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY states
+    ADD CONSTRAINT states_countries_country_id_fk FOREIGN KEY (country_id) REFERENCES countries(country_id);
+
+
+--
+-- TOC entry 2421 (class 2606 OID 33580)
 -- Name: user user_cities_city_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1064,7 +1092,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2418 (class 2606 OID 33653)
+-- TOC entry 2423 (class 2606 OID 33653)
 -- Name: user user_genders_gender_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1073,7 +1101,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2417 (class 2606 OID 33585)
+-- TOC entry 2422 (class 2606 OID 33585)
 -- Name: user user_roles_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1082,7 +1110,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2435 (class 2606 OID 33590)
+-- TOC entry 2440 (class 2606 OID 33590)
 -- Name: user_to_travel user_to_travel_roles_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1091,7 +1119,7 @@ ALTER TABLE ONLY user_to_travel
 
 
 --
--- TOC entry 2436 (class 2606 OID 33595)
+-- TOC entry 2441 (class 2606 OID 33595)
 -- Name: user_to_travel user_to_travel_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1100,7 +1128,7 @@ ALTER TABLE ONLY user_to_travel
 
 
 --
--- TOC entry 2437 (class 2606 OID 33600)
+-- TOC entry 2442 (class 2606 OID 33600)
 -- Name: user_to_travel user_to_travel_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1108,7 +1136,7 @@ ALTER TABLE ONLY user_to_travel
     ADD CONSTRAINT user_to_travel_user_id_fk FOREIGN KEY (user_id) REFERENCES "user"(id);
 
 
--- Completed on 2017-02-16 09:35:57 MSK
+-- Completed on 2017-02-17 07:56:05 MSK
 
 --
 -- PostgreSQL database dump complete
