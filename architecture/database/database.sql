@@ -64,7 +64,7 @@ CREATE TABLE "user" (
 -- Name: USER_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE "USER_id_seq"
+CREATE SEQUENCE "user_id_seq"
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -78,15 +78,15 @@ CREATE SEQUENCE "USER_id_seq"
 -- Name: USER_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE "USER_id_seq" OWNED BY "user".id;
+ALTER SEQUENCE "user_id_seq" OWNED BY "user".id;
 
 
 --
 -- TOC entry 187 (class 1259 OID 33361)
--- Name: albums; Type: TABLE; Schema: public; Owner: -
+-- Name: album; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE albums (
+CREATE TABLE album (
     id integer NOT NULL,
     name character varying(100) NOT NULL,
     create_date date NOT NULL,
@@ -114,7 +114,7 @@ CREATE SEQUENCE albums_id_seq
 -- Name: albums_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE albums_id_seq OWNED BY albums.id;
+ALTER SEQUENCE albums_id_seq OWNED BY album.id;
 
 
 --
@@ -159,7 +159,7 @@ ALTER SEQUENCE chat_travel_id_seq OWNED BY chat_travel.id;
 --
 
 CREATE TABLE cities (
-    citi_id integer NOT NULL,
+    city_id integer NOT NULL,
     name character varying(50) NOT NULL,
     state_id integer NOT NULL
 );
@@ -167,10 +167,10 @@ CREATE TABLE cities (
 
 --
 -- TOC entry 192 (class 1259 OID 33380)
--- Name: cities_citi_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: cities_city_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE cities_citi_id_seq
+CREATE SEQUENCE cities_city_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -181,10 +181,10 @@ CREATE SEQUENCE cities_citi_id_seq
 --
 -- TOC entry 2571 (class 0 OID 0)
 -- Dependencies: 192
--- Name: cities_citi_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: cities_city_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE cities_citi_id_seq OWNED BY cities.citi_id;
+ALTER SEQUENCE cities_city_id_seq OWNED BY cities.city_id;
 
 
 --
@@ -258,10 +258,10 @@ ALTER SEQUENCE countries_country_id_seq OWNED BY countries.country_id;
 
 --
 -- TOC entry 197 (class 1259 OID 33395)
--- Name: friends; Type: TABLE; Schema: public; Owner: -
+-- Name: friend; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE friends (
+CREATE TABLE friend (
     user_1 integer NOT NULL,
     user_2 integer NOT NULL
 );
@@ -549,7 +549,6 @@ ALTER SEQUENCE travels_id_seq OWNED BY travels.id;
 --
 
 CREATE TABLE user_to_travel (
-    id integer NOT NULL,
     user_id integer NOT NULL,
     travel_id integer NOT NULL,
     role_id integer NOT NULL
@@ -557,33 +556,11 @@ CREATE TABLE user_to_travel (
 
 
 --
--- TOC entry 211 (class 1259 OID 33446)
--- Name: user_to_travel_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE user_to_travel_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- TOC entry 2581 (class 0 OID 0)
--- Dependencies: 211
--- Name: user_to_travel_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE user_to_travel_id_seq OWNED BY user_to_travel.id;
-
-
---
 -- TOC entry 2364 (class 2604 OID 33449)
--- Name: albums id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: album id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY albums ALTER COLUMN id SET DEFAULT nextval('albums_id_seq'::regclass);
+ALTER TABLE ONLY album ALTER COLUMN id SET DEFAULT nextval('albums_id_seq'::regclass);
 
 
 --
@@ -596,10 +573,10 @@ ALTER TABLE ONLY chat_travel ALTER COLUMN id SET DEFAULT nextval('chat_travel_id
 
 --
 -- TOC entry 2366 (class 2604 OID 33451)
--- Name: cities citi_id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: cities city_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY cities ALTER COLUMN citi_id SET DEFAULT nextval('cities_citi_id_seq'::regclass);
+ALTER TABLE ONLY cities ALTER COLUMN city_id SET DEFAULT nextval('cities_city_id_seq'::regclass);
 
 
 --
@@ -679,16 +656,7 @@ ALTER TABLE ONLY travels ALTER COLUMN id SET DEFAULT nextval('travels_id_seq'::r
 -- Name: user id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('"USER_id_seq"'::regclass);
-
-
---
--- TOC entry 2375 (class 2604 OID 33460)
--- Name: user_to_travel id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY user_to_travel ALTER COLUMN id SET DEFAULT nextval('user_to_travel_id_seq'::regclass);
-
+ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('user_id_seq'::regclass);
 
 --
 -- TOC entry 2380 (class 2606 OID 33462)
@@ -701,10 +669,10 @@ ALTER TABLE ONLY "user"
 
 --
 -- TOC entry 2382 (class 2606 OID 33464)
--- Name: albums albums_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: album albums_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY albums
+ALTER TABLE ONLY album
     ADD CONSTRAINT albums_pkey PRIMARY KEY (id);
 
 
@@ -723,7 +691,7 @@ ALTER TABLE ONLY chat_travel
 --
 
 ALTER TABLE ONLY cities
-    ADD CONSTRAINT cities_pkey PRIMARY KEY (citi_id);
+    ADD CONSTRAINT cities_pkey PRIMARY KEY (city_id);
 
 
 --
@@ -742,6 +710,15 @@ ALTER TABLE ONLY comment_photo
 
 ALTER TABLE ONLY countries
     ADD CONSTRAINT countries_pkey PRIMARY KEY (country_id);
+
+
+--
+-- TOC entry 2417 (class 2606 OID 33643)
+-- Name: friends friends_user_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY friend
+    ADD CONSTRAINT friends_user_pkey PRIMARY KEY (user_1, user_2);
 
 
 --
@@ -816,13 +793,6 @@ ALTER TABLE ONLY travels
     ADD CONSTRAINT travels_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 2414 (class 2606 OID 33488)
--- Name: user_to_travel user_to_travel_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY user_to_travel
-    ADD CONSTRAINT user_to_travel_pkey PRIMARY KEY (id);
 
 
 --
@@ -897,21 +867,6 @@ CREATE UNIQUE INDEX "USER_EMAIL_uindex" ON "user" USING btree (email);
 CREATE INDEX cities_name_index ON cities USING btree (name);
 
 
---
--- TOC entry 2395 (class 1259 OID 33498)
--- Name: friends_user_1_index; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX friends_user_1_index ON friends USING btree (user_1);
-
-
---
--- TOC entry 2396 (class 1259 OID 33499)
--- Name: friends_user_2_index; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX friends_user_2_index ON friends USING btree (user_2);
-
 
 --
 -- TOC entry 2415 (class 1259 OID 41310)
@@ -931,10 +886,10 @@ CREATE INDEX states_name_index ON states USING btree (name);
 
 --
 -- TOC entry 2424 (class 2606 OID 33500)
--- Name: albums albums_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: album albums_travels_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY albums
+ALTER TABLE ONLY album
     ADD CONSTRAINT albums_travels_id_fk FOREIGN KEY (travel_id) REFERENCES travels(id);
 
 
@@ -985,19 +940,19 @@ ALTER TABLE ONLY comment_photo
 
 --
 -- TOC entry 2430 (class 2606 OID 33626)
--- Name: friends friends_user_user_1_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: friend friends_user_user_1_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY friends
+ALTER TABLE ONLY friend
     ADD CONSTRAINT friends_user_user_1_fk FOREIGN KEY (user_1) REFERENCES "user"(id);
 
 
 --
 -- TOC entry 2431 (class 2606 OID 33631)
--- Name: friends friends_user_user_2_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: friend friends_user_user_2_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY friends
+ALTER TABLE ONLY friend
     ADD CONSTRAINT friends_user_user_2_fk FOREIGN KEY (user_2) REFERENCES "user"(id);
 
 
@@ -1025,7 +980,7 @@ ALTER TABLE ONLY messages
 --
 
 ALTER TABLE ONLY photos
-    ADD CONSTRAINT photos_albums_id_fk FOREIGN KEY (album_id) REFERENCES albums(id);
+    ADD CONSTRAINT photos_albums_id_fk FOREIGN KEY (album_id) REFERENCES album(id);
 
 
 --
@@ -1039,11 +994,11 @@ ALTER TABLE ONLY photos
 
 --
 -- TOC entry 2436 (class 2606 OID 33560)
--- Name: plans plans_cities_citi_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: plans plans_cities_city_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY plans
-    ADD CONSTRAINT plans_cities_citi_id_fk FOREIGN KEY (city_id) REFERENCES cities(citi_id);
+    ADD CONSTRAINT plans_cities_city_id_fk FOREIGN KEY (city_id) REFERENCES cities(city_id);
 
 
 --
@@ -1088,7 +1043,7 @@ ALTER TABLE ONLY states
 --
 
 ALTER TABLE ONLY "user"
-    ADD CONSTRAINT user_cities_city_id_fk FOREIGN KEY (city_id) REFERENCES cities(citi_id);
+    ADD CONSTRAINT user_cities_city_id_fk FOREIGN KEY (city_id) REFERENCES cities(city_id);
 
 
 --

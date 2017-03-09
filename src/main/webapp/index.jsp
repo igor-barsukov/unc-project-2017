@@ -16,7 +16,7 @@
 </head>
 <body>
   <h3><a href="/users">User List</a></h3>
-  <h3><a href="/travels">Travels List</a></h3
+  <h3><a href="/travels">Travels List</a></h3>
   <h3><a href="/plans">Plans List</a></h3>
 </body>
 </html>

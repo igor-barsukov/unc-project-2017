@@ -21,17 +21,18 @@
             <td><form:input path="firstName" /></td>
         </tr>
         <tr>
+            <td>last_name:</td>
+            <td><form:input path="lastName" /></td>
+            </tr>
+        <tr>
             <td>birthday:</td>
-            <td><form:input path="birthday" /></td>
+            <td><form:input type="date" path="birthday" /></td>
         </tr>
         <tr>
             <td>cityID:</td>
-            <td><form:input path="cityID" /></td>
+            <td><form:input path="city.id" /></td>
         </tr>
-        <tr>
-            <td>last_name:</td>
-            <td><form:input path="lastName" /></td>
-        </tr>
+
         <tr>
             <td>password:</td>
             <td><form:input path="password" /></td>
@@ -42,7 +43,7 @@
         </tr>
         <tr>
             <td>gender:</td>
-            <td><form:input path="gender" /></td>
+            <td><form:input path="gender.id" /></td>
         </tr>
         <tr>
             <td>info:</td>
@@ -50,7 +51,7 @@
         </tr>
         <tr>
             <td>roleID:</td>
-            <td><form:input path="roleID" /></td>
+            <td><form:input path="role.id" /></td>
         </tr>
         <tr>
             <td>user_photo:</td>

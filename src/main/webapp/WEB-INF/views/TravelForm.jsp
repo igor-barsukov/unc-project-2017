@@ -23,11 +23,11 @@
             </tr>
             <tr>
                 <td>startDate:</td>
-                <td><form:input path="startDate" /></td>
+                <td><form:input  type="date" path="startDate" /></td>
             </tr>
             <tr>
                 <td>endDAte:</td>
-                <td><form:input path="endDate" /></td>
+                <td><form:input  type="date" path="endDate" /></td>
             </tr>
             <tr>
                 <td>info:</td>

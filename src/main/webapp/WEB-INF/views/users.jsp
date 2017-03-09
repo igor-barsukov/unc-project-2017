@@ -15,15 +15,15 @@
 <h3><a href="/newUser">New User</a></h3>
 <table border="1">
     <th>id</th>
-    <th>first_name</th>
-    <th>last_name</th>
+    <th>firstname</th>
+    <th>lastname</th>
     <th>birthday</th>
-    <th>city_id</th>
+    <th>city</th>
     <th>email</th>
     <th>password</th>
     <th>gender</th>
     <th>info</th>
-    <th>roleID</th>
+    <th>role</th>
     <th>user_photo</th>
     <c:forEach var="user" items="${listUsers}" varStatus="status">
         <tr>
@@ -31,12 +31,12 @@
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
             <td>${user.birthday}</td>
-            <td>${user.cityID}</td>
+            <td>${user.city.name}</td>
             <td>${user.email}</td>
             <td>${user.password}</td>
-            <td>${user.gender}</td>
+            <td>${user.gender.gender}</td>
             <td>${user.info}</td>
-            <td>${user.roleID}</td>
+            <td>${user.role.name}</td>
             <td>${user.userPhoto}</td>
             <td><a href="/getUsers?id=${user.id}">Edit</a></td>
             <td><a href="/deleteUser?id=${user.id}">Delete</a></td>

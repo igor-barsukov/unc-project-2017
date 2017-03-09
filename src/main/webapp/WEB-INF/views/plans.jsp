@@ -28,11 +28,11 @@
         <tr>
             <td>${plan.id}</td>
             <td>${plan.name}</td>
-            <td>${plan.travelID}</td>
+            <td>${plan.travel.id}</td>
             <td>${plan.startDate}</td>
             <td>${plan.endDate}</td>
             <td>${plan.info}</td>
-            <td>${plan.cityID}</td>
+            <td>${plan.city.id}</td>
             <td>${plan.active}</td>
             <td>${plan.latitude}</td>
             <td>${plan.longitude}</td>

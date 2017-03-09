@@ -22,15 +22,15 @@
         </tr>
         <tr>
             <td>travelID:</td>
-            <td><form:input path="travelID" /></td>
+            <td><form:input path="travel.id" /></td>
         </tr>
         <tr>
             <td>startDate:</td>
-            <td><form:input path="startDate" /></td>
+            <td><form:input  type="date" path="startDate" /></td>
         </tr>
         <tr>
             <td>endDate:</td>
-            <td><form:input path="endDate" /></td>
+            <td><form:input  type="date" path="endDate" /></td>
         </tr>
         <tr>
             <td>info:</td>
@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td>cityID:</td>
-            <td><form:input path="cityID" /></td>
+            <td><form:input path="city.id" /></td>
         </tr>
         <tr>
             <td>active:</td>
