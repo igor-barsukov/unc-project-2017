@@ -64,7 +64,7 @@ public class MainController {
 
     @RequestMapping(value = "/saveTravel", method = RequestMethod.POST)
     public ModelAndView saveTravel(@ModelAttribute Travel newTravel,  BindingResult result) {
-        travelService.add(newTravel);
+        travelService.addOrUpdate(newTravel);
         return new ModelAndView("redirect:/travels");
     }
 
@@ -105,7 +105,7 @@ public class MainController {
 
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     public ModelAndView saveUser(@ModelAttribute("user") User user, BindingResult result) {
-        userService.add(user);
+        userService.addOrUpdate(user);
         return new ModelAndView("redirect:/users");
     }
 
@@ -147,7 +147,7 @@ public class MainController {
 
     @RequestMapping(value = "/savePlan", method = RequestMethod.POST)
     public ModelAndView savePlan(@ModelAttribute Plan newPlan, BindingResult result ) {
-        planService.add(newPlan);
+        planService.addOrUpdate(newPlan);
         return new ModelAndView("redirect:/plans");
     }
 
