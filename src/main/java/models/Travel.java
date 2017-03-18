@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -19,10 +20,15 @@ public class Travel implements Serializable {
     private Date endDate;
     private String info;
     private boolean isActive;
+    @JsonIgnore
     private Collection<Album> albums;
+    @JsonIgnore
     private Collection<ChatTravel> chats;
+    @JsonIgnore
     private Collection<Plan> plans;
+    @JsonIgnore
     private Collection<PostOfTravel> posts;
+    @JsonIgnore
     private Collection<UserToTravel> userToTravels;
 
     public Travel() {

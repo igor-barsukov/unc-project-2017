@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -12,6 +14,7 @@ import java.util.Collection;
 public class Country implements Serializable {
     private Integer id;
     private String name;
+    @JsonIgnore
     private Collection<State> states;
 
     public Country(String name) {

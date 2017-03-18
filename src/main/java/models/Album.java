@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Album implements Serializable {
     private Date createDate;
     private String description;
     private Travel travel;
+    @JsonIgnore
     private Collection<Photo> photos;
 
     public Album() {

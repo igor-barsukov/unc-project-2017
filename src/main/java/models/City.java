@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -13,7 +15,9 @@ public class City implements Serializable {
     private Integer id;
     private String name;
     private State state;
+    @JsonIgnore
     private Collection<Plan> plans;
+    @JsonIgnore
     private Collection<User> users;
 
     public City() {

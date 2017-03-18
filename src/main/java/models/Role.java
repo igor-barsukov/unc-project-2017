@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -12,7 +14,9 @@ import java.util.Collection;
 public class Role implements Serializable {
     private Integer id;
     private String name;
+    @JsonIgnore
     private Collection<User> users;
+    @JsonIgnore
     private Collection<UserToTravel> userToTravels;
 
     public Role() {

@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Proxy;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -21,16 +23,24 @@ public class User implements Serializable {
     private String email;
     private String info;
     private String userPhoto;
+    @JsonIgnore
     private Collection<ChatTravel> chatTravels;
+    @JsonIgnore
     private Collection<CommentPhoto> comments;
+    @JsonIgnore
     private Collection<User> friends;
-    private Collection<Message> sendedMessages;
+    @JsonIgnore
+    private Collection<Message> sentMessages;
+    @JsonIgnore
     private Collection<Message> reseivedMessages;
+    @JsonIgnore
     private Collection<Photo> photos;
+    @JsonIgnore
     private Collection<PostOfTravel> postOfTravels;
     private City city;
     private Gender gender;
     private Role role;
+    @JsonIgnore
     private Collection<UserToTravel> userToTravels;
 
     public User() {
@@ -73,8 +83,8 @@ public class User implements Serializable {
 
     @Basic
     @Column(name = "birthday", nullable = true)
-   @DateTimeFormat(pattern = "yyyy-M-dd")
-   @Temporal(value = TemporalType.DATE )
+    @DateTimeFormat(pattern = "yyyy-M-dd")
+    @Temporal(value = TemporalType.DATE )
     public Date getBirthday() {
         return birthday;
     }
@@ -165,7 +175,8 @@ public class User implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "sender")
+
+    @OneToMany( mappedBy = "sender")
     public Collection<ChatTravel> getChatTravels() {
         return chatTravels;
     }
@@ -174,7 +185,9 @@ public class User implements Serializable {
         this.chatTravels = chatTravels;
     }
 
+
     @OneToMany(mappedBy = "commentator")
+    @JsonIgnore
     public Collection<CommentPhoto> getComments() {
         return comments;
     }
@@ -184,6 +197,7 @@ public class User implements Serializable {
     }
 
    //?
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "friends", catalog = "TravelDB", joinColumns = {
             @JoinColumn(name = "user_1", nullable = false, updatable = false) },
@@ -198,14 +212,15 @@ public class User implements Serializable {
     }
 
 
-    @OneToMany(mappedBy = "sender")
-    public Collection<Message> getSendedMessages() {
-        return sendedMessages;
+    @OneToMany( mappedBy = "sender")
+    public Collection<Message> getSentMessages() {
+        return sentMessages;
     }
 
-    public void setSendedMessages(Collection<Message> sendedMessages) {
-        this.sendedMessages = sendedMessages;
+    public void setSentMessages(Collection<Message> sentMessages) {
+        this.sentMessages = sentMessages;
     }
+
 
     @OneToMany(mappedBy = "recipient")
     public Collection<Message> getReseivedMessages() {
@@ -216,6 +231,7 @@ public class User implements Serializable {
         this.reseivedMessages = reseivedMessages;
     }
 
+
     @OneToMany(mappedBy = "owner")
     public Collection<Photo> getPhotos() {
         return photos;
@@ -224,6 +240,7 @@ public class User implements Serializable {
     public void setPhotos(Collection<Photo> photos) {
         this.photos = photos;
     }
+
 
     @OneToMany(mappedBy = "owner")
     public Collection<PostOfTravel> getPostOfTravels() {
@@ -263,6 +280,7 @@ public class User implements Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
+
 
     @OneToMany(mappedBy = "user")
     public Collection<UserToTravel> getUserToTravels() {
