@@ -33,6 +33,15 @@ public class UserController {
         return new ResponseEntity(user, HttpStatus.OK);
     }
 
+    @GetMapping("/users/getByEmail/{email:.+}")
+    public ResponseEntity getUserByEmail(@PathVariable("email") String email) {
+        User user = userService.getByEmail(email.trim());
+        if (user == null) {
+            return new ResponseEntity("No User found for email " + email, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(user, HttpStatus.OK);
+    }
     @PostMapping(value = "/users")
     public ResponseEntity createUser(@RequestBody User user) {
 

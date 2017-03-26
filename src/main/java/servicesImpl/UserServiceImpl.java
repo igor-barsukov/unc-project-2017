@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import services.UserService;
-
+@Transactional
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired
@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService{
     public List<User> getAll() {
         return  userRepository.findAll();
     }
+
+    @Transactional
+    public  User getByEmail(String email){
+        return  userRepository.findByEmail(email);
+    }
+
 }
