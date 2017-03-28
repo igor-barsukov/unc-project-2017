@@ -50,6 +50,6 @@
     <context:annotation-config />
     <context:component-scan base-package="servicesImpl" />
     <tx:annotation-driven transaction-manager="transactionManager" />
-
+    <import resource="security.xml"/>
 
 </beans>

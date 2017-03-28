@@ -1,0 +1,32 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:b="http://www.springframework.org/schema/c"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <http auto-config="true" >
+        <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/login" access="permitAll" />
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/userPage**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/anonim**" access="hasRole('ROLE_ANONYMOUS')" />
+        <form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?error"
+                    username-parameter="username" password-parameter="password"/>
+
+        <logout logout-success-url="/login?logout"/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+        <csrf/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="customUserDetailsService">
+            <password-encoder ref="bcryptEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="customUserDetailsService" class="services.CustomUserDetailsService" />
+    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <beans:constructor-arg name="strength" value="12"/>
+    </beans:bean>
+
+</beans:beans>
