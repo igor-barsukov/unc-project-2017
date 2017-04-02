@@ -1,5 +1,7 @@
 package servicesImpl;
 
+import models.Travel;
+import models.User;
 import models.UserToTravel;
 import models.UserToTravelPK;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +32,13 @@ public class UserToTravelAlbumServiceImpl implements UserToTravelService {
     @Transactional
     public UserToTravel get(UserToTravelPK id) {
         return userToTravelRepository.findOne(id);
+    }
+    @Transactional
+    public List<Travel> getTravelsByUserId(Integer userId){
+        return userToTravelRepository.getByUserId(userId);
+    }
+    @Transactional
+    public List<User> getUsersByTravelId (Integer travelId){
+        return userToTravelRepository.getByTravelId(travelId);
     }
 }

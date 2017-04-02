@@ -33,6 +33,16 @@ public class PhotoController {
         return new ResponseEntity(photo, HttpStatus.OK);
     }
 
+    @GetMapping("/photos/getByUserId/{id}")
+    public ResponseEntity getPhotosByOwner(@PathVariable("id") Integer id) {
+        List<Photo> photos = photoService.getPhotosByOwner(id);
+        if (photos.isEmpty()) {
+            return new ResponseEntity("No Photos found for user with ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(photos, HttpStatus.OK);
+    }
+
     @PostMapping(value = "/photos")
     public ResponseEntity createPhoto(@RequestBody Photo photo) {
 

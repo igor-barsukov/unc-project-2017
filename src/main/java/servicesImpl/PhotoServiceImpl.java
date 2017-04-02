@@ -35,4 +35,8 @@ public class PhotoServiceImpl  implements PhotoService{
     public Photo get(Integer id) {
         return photoRepository.findOne(id);
     }
+    @Transactional
+    public List<Photo> getPhotosByOwner(Integer owner){
+        return photoRepository.getPhotosByOwner(owner);
+    }
 }

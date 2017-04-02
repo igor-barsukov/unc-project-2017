@@ -1,37 +1,20 @@
-
-INSERT INTO friend(
-            user_1, user_2)
-    VALUES  (1,2),
-			(2,3),
-			(3,2),			
-			(1,5),
-			(5,2),
-			(5,3), 
-			(4,11),
-			(4,8),
-			(12,1),
-			(1,2),
-			(12,2)
-			;
-			
-INSERT INTO genders( 
+INSERT INTO genders(
 			id, gender)
     VALUES  (0, 'not selected'),
 			(1, 'male'),
 			(2, 'female')
 			;
-			
+
 INSERT INTO roles(
             id, name)
     VALUES  (0, 'admin'),
 			(1, 'moderator'),
 			(2, 'user'),
 			(3, 'banned')
-			;			
-			
+			;
 
-INSERT INTO user(
-             first_name, last_name, birthday, city_id, password, email, 
+INSERT INTO "user"(
+             first_name, last_name, birthday, city_id, password, email,
             gender,  id_role)
     VALUES  ('Veronika', 'Ivanova','24.10.1995',37356, 'qwerty', 'nika@nika.nika' ,2, 0),
 			('Irina', 'Dmitrievtseva', '07.07.1996',37356, 'qwerty', 'ira@ira.ira' ,2, 0),
@@ -40,17 +23,17 @@ INSERT INTO user(
 			('Alexandra', 'Timofeeva', '19.08.1995', 36718, 'qwerty', 'alex@ndra.lem',2, 3),
 			('Ivan', 'Seleznev', '11.11.1989',36718, 'qwerty', 'ivan@ndra.lem',1, 3),
 			('Natalia', 'Kovalenko', '25.09.1995',37356, 'qwerty', 'nat@lia.kov',2, 3),
-			('Salim', 'Bengezal', '31.10.1994', 37356,  'qwerty', 'salim@ben.kov',1, 3),   
+			('Salim', 'Bengezal', '31.10.1994', 37356,  'qwerty', 'salim@ben.kov',1, 3),
 			('Oliver', 'Sykes', '20.11.1986', 42219, 'qwerty', 'oly@ct.er',1, 3),
 			('Lilia', 'Sheby', '11.06.1994', 19089, 'qwerty', 'lili@mail.mail',2,3),
-			('Mike', 'Holes', '21.03.1982', 19019, 'qwerty', 'mikehol@mail.mail',1,3), 
+			('Mike', 'Holes', '21.03.1982', 19019, 'qwerty', 'mikehol@mail.mail',1,3),
 			('Yura', 'Ivanov', '08.06.1969', 36254, 'qwerty', 'yoivae@mail.mail',1,3),
 			('Ann', 'Shagul', '09.06.1996', 36254, 'qwerty', 'annsh@mail.mail',2,3)
 			;
-			
+
 INSERT INTO travels(
              name, start_date, end_date,  is_active)
-    VALUES  ('Concert', '03.02.2017','05.02.2017', false),  
+    VALUES  ('Concert', '03.02.2017','05.02.2017', false),
 			('WinterTrip','02.02.2014','15.02.2014', false),
 			('SomeTrip', '20.01.2017', '30.01.2017', false),
 			('SeaTrip', '20.06.2017', '01.07.2017', true),
@@ -58,15 +41,15 @@ INSERT INTO travels(
 			('SunnyTrip', '20.05.2017', '31.07.2017', true),
 			('SummerTrip', '20.06.2017', '01.07.2017', true),
 			('JustATrip', '20.10.2017', '30.10.2017', true)
-    ;			
-		
+    ;
+
 
 INSERT INTO plans(
              name, travel_id, start_date, end_date, city_id, is_active)
     VALUES  ('Vrn', 1, '2017-02-03', '2017-02-03', 37356, false),
 			('Msc', 1, '2017-02-03', '2017-02-05', 36718, false),
 			('Vrn', 1, '2017-02-05', '2017-02-05', 37356, false),
-			
+
 			('Vrn', 2, '2014-02-02', '2014-02-02', 37356, false),
 			('Vrn', 2, '2014-02-02', '2014-02-02', 37356, false),
 			('Plane', 2, '2014-02-02', '2014-02-03', 36718, false),
@@ -111,7 +94,22 @@ INSERT INTO plans(
 			('Place3', 7, '2017-10-29', '2017-10-30',36267, true),
 			('End', 7, '2017-10-30', '2017-10-30', 37356, true)
 
-	;		
+	;
+
+INSERT INTO friend(
+            user_1, user_2)
+    VALUES  (1,2),
+			(2,3),
+			(3,2),			
+			(1,5),
+			(5,2),
+			(5,3), 
+			(4,11),
+			(4,8),
+			(12,1),
+			(12,2)
+			;
+
 	
 	INSERT INTO user_to_travel(
             user_id, travel_id, role_id)
