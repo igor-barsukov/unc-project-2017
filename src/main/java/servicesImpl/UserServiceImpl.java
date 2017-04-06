@@ -50,4 +50,9 @@ public class UserServiceImpl implements UserService{
         return  userRepository.findByEmail(email);
     }
 
+    @Transactional
+    public User getByCredentials(String email, String password){
+        return userRepository.findByEmailAndPassword(email,password);
+    }
+
 }
