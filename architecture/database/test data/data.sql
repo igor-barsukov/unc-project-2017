@@ -43,74 +43,21 @@ INSERT INTO travels(
 			('JustATrip', '20.10.2017', '30.10.2017', true)
     ;
 
-
-INSERT INTO plans(
-             name, travel_id, start_date, end_date, city_id, is_active)
-    VALUES  ('Vrn', 1, '2017-02-03', '2017-02-03', 37356, false),
-			('Msc', 1, '2017-02-03', '2017-02-05', 36718, false),
-			('Vrn', 1, '2017-02-05', '2017-02-05', 37356, false),
-
-			('Vrn', 2, '2014-02-02', '2014-02-02', 37356, false),
-			('Vrn', 2, '2014-02-02', '2014-02-02', 37356, false),
-			('Plane', 2, '2014-02-02', '2014-02-03', 36718, false),
-			('Walk', 2, '2014-02-03', '2014-02-03', 20399, false),
-			('Visit a Great Place', 2, '2014-02-06', '2014-02-09', 20398, false),
-			('Plane', 2, '2014-02-14', '2014-02-15',20398, false),
-			('Vrn', 2, '2014-02-14', '2014-02-15', 37356, false),
-
-			('Vrn', 3, '2017-02-20', '2014-02-20', 37356, false),
-			('Plane', 3, '2017-02-20', '2014-02-21', 36718, false),
-			('Visit  Interesting', 3, '2017-02-25', '2017-02-26', 14348, false),
-			('Plane', 3, '2014-02-14', '2014-02-18',14348, false),
-			('Vrn', 3, '2014-02-14', '2014-02-15', 37356, false),
-
-			('Start', 4, '2017-06-20', '2017-06-20', 37356, true),
-			('Place1', 4, '2017-06-25', '2017-06-26', 23428, true),
-			('Place2', 4, '2017-06-28', '2017-06-29', 23440, true),
-			('Place3', 4, '2017-06-29', '2017-06-30',14348, true),
-			('End', 4, '2017-07-01', '2017-07-01', 37356, true),
-
-			('Start', 5, '2017-01-20', '2017-01-20', 15632, false),
-			('Place1', 5, '2017-01-23', '2017-01-26', 23428, false),
-			('Place2', 5, '2017-01-28', '2017-01-29', 23440, false),
-			('End', 5, '2017-01-30', '2017-01-30', 15632, false),
-
-
-			('Start', 6, '2017-05-20', '2017-05-20', 37356, true),
-			('Place1', 6, '2017-05-25', '2017-06-16', 2348, true),
-			('Place2', 6, '2017-06-18', '2017-06-29', 23440, true),
-			('End', 6, '2017-07-31', '2017-07-31', 37356, true),
-
-
-			('Start', 7, '2017-06-20', '2017-06-20', 13422, true),
-			('Place1', 7, '2017-06-25', '2017-06-26', 23428, true),
-			('Place3', 7, '2017-06-29', '2017-06-30',14348, true),
-			('End', 7, '2017-07-01', '2017-07-01', 13422, true),
-
-
-
-			('Start', 8, '2017-10-20', '2017-10-20', 37356, true),
-			('Place1', 7, '2017-10-24', '2017-10-28', 36254, true),
-			('Place3', 7, '2017-10-29', '2017-10-30',36267, true),
-			('End', 7, '2017-10-30', '2017-10-30', 37356, true)
-
-	;
-
 INSERT INTO friend(
             user_1, user_2)
     VALUES  (1,2),
 			(2,3),
-			(3,2),			
+			(3,2),
 			(1,5),
 			(5,2),
-			(5,3), 
+			(5,3),
 			(4,11),
 			(4,8),
 			(12,1),
 			(12,2)
 			;
 
-	
+
 	INSERT INTO user_to_travel(
             user_id, travel_id, role_id)
     VALUES  (1, 1, 0),
@@ -121,7 +68,7 @@ INSERT INTO friend(
 			(4, 3, 0),
 			(11, 3, 3),
 			(4, 4, 3),
-			(8, 4, 0),   
+			(8, 4, 0),
 			(1, 5, 0),
 			(3, 5, 0),
 			(1, 6, 0),
@@ -134,6 +81,44 @@ INSERT INTO friend(
 			(13, 7, 0)
 	;
 
-	
-	
-	
+INSERT INTO part_of_travel(
+			travel_id, date, description, is_actice, info)
+	VALUES	(4, '2017-04-20', 'plan of day', true, 'info'),
+			(2, '2017-04-27', 'plan of day', true, 'info');
+
+
+INSERT INTO booked_hotel(
+			part_of_travel, address, price, check_in_time, check_out_time, hotel_name)
+	VALUES	(1, 'ul. Vladimira Nevskogo, 29, Voronezh', 1000, '2017-04-09 15:09:57.72', '2017-04-09 17:10:00.102', 'Benefit Plaza Kongress');
+
+
+INSERT INTO sight(
+			country_id, state_id, city_id, description)
+	VALUES	(181, 3073, 37356, 'Annunciation Cathedral of Voronezh'),
+			(181, 3073, 37356, 'Model of the ship Mercury Cathedral of Voronezh'),
+			(181, 3073, 37356, 'Monument of Glory');
+
+INSERT INTO travel_by_bus(
+			part_of_travel, start_place, end_place, start_station,
+			end_station, platform, bus_number, distance, price, departure, arrival)
+	VALUES	(1, 3, 4, 'Vnukovo', 'Nara', 1, '45A', 245, 150, '2017-04-08 18:22:51.503', '2017-04-09 18:22:53.999');
+
+INSERT INTO travel_by_car(
+			part_of_travel, start_address, end_address, company, car_description,
+			price, pick_up_time, drop_off_time)
+	VALUES	(1, 'Voronezh, Mira 2', 'Moscow, Mira 7', NULL, 'Audi A8', 200, '2017-04-08 18:35:04.244', '2017-04-09 03:35:07.046');
+
+INSERT INTO travel_by_flight(
+			part_of_travel, start_place, end_place, start_airport_name, end_airport_name,
+			airline, flight_number, destance, price, departure, arrival)
+	VALUES	(1, 4, 7, 'Vnukovo', 'Aldan Airport', 'RusLain', 1253, 800, 5000, '2017-04-08 18:24:31.084', '2017-04-10 18:24:33.699');
+
+INSERT INTO travel_by_rail(
+			part_of_travel, start_station, end_station, platform, train_number,
+			distance, price, start_place, end_place, departure, arrival)
+	VALUES	(1, 'Voronezh-1', 'Moscow', 2, '567', 650, 1000, 2, 2, '2017-04-08 18:26:31.31', '2017-04-08 22:26:32.885');
+
+INSERT INTO travel_to_sight(
+		part_of_travel, sight_id)
+	VALUES	(1, 3),
+			(1, 1);
