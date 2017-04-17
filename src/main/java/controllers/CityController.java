@@ -31,6 +31,10 @@ public class CityController {
 
         return new ResponseEntity(city, HttpStatus.OK);
     }
+    @GetMapping("/cities/state/{id}")
+    public List getCityByStateId(@PathVariable("Cid") Integer stateId) {
+        return cityService.getByStateId(stateId);
+    }
 
     @PostMapping(value = "/cities")
     public ResponseEntity createCity(@RequestBody City city) {

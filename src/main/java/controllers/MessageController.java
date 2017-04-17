@@ -1,13 +1,11 @@
 package controllers;
 
 import models.Message;
-import models.Plan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import services.MessageService;
-import services.PlanService;
 
 import java.util.List;
 
@@ -30,6 +28,36 @@ public class MessageController {
         Message message = messageService.get(id);
         if (message == null) {
             return new ResponseEntity("No Message found for ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/messages/sender={id}")
+    public ResponseEntity getMessageBySender(@PathVariable("id") Integer id) {
+        List<Message> message = messageService.getAllBySenderId(id);
+        if (message == null) {
+            return new ResponseEntity("No Message found for ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/messages/recipient={id}")
+    public ResponseEntity getMessageByRecipient(@PathVariable("id") Integer id) {
+        List<Message> message = messageService.getAllByRecipientId(id);
+        if (message == null) {
+            return new ResponseEntity("No Message found for ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/messages/chat")
+    public ResponseEntity getChatBetweenTwoUsers(@RequestParam("user1") Integer user1, @RequestParam("user2") Integer user2) {
+        List<Message> message = messageService.getChatOfTwoUsers(user1, user2);
+        if (message == null) {
+            return new ResponseEntity("No Message found for these users ",  HttpStatus.NOT_FOUND);
         }
 
         return new ResponseEntity(message, HttpStatus.OK);

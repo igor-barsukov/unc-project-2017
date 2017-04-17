@@ -3,7 +3,7 @@ package repositories;
 import models.Travel;
 import models.User;
 import models.UserToTravel;
-import models.UserToTravelPK;
+import models.helpers.UserToTravelPK;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

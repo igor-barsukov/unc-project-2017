@@ -1,5 +1,7 @@
 package models;
 
+import models.helpers.UserToTravelPK;
+
 import javax.persistence.*;
 import java.io.Serializable;
 

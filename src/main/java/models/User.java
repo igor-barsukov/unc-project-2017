@@ -13,7 +13,7 @@ import java.util.Collection;
  * Created by acer-pc on 07.03.2017.
  */
 @Entity
-@Table(name = "user", schema = "public", catalog = "TravelDB")
+@Table(name = "users", schema = "public", catalog = "TravelDB")
 public class User implements Serializable {
     private Integer id;
     private String firstName;
@@ -197,7 +197,6 @@ public class User implements Serializable {
     }
 
    //?
-
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "friends", catalog = "TravelDB", joinColumns = {
             @JoinColumn(name = "user_1", nullable = false, updatable = false) },

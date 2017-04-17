@@ -25,11 +25,13 @@ public class Travel implements Serializable {
     @JsonIgnore
     private Collection<ChatTravel> chats;
     @JsonIgnore
-    private Collection<Plan> plans;
-    @JsonIgnore
     private Collection<PostOfTravel> posts;
     @JsonIgnore
     private Collection<UserToTravel> userToTravels;
+    @JsonIgnore
+    private Collection<Activity> activities;
+    @JsonIgnore
+    private Collection<Movement> movements;
 
     public Travel() {
     }
@@ -156,15 +158,6 @@ public class Travel implements Serializable {
     }
 
     @OneToMany(mappedBy = "travel")
-    public Collection<Plan> getPlans() {
-        return plans;
-    }
-
-    public void setPlans(Collection<Plan> plans) {
-        this.plans = plans;
-    }
-
-    @OneToMany(mappedBy = "travel")
     public Collection<PostOfTravel> getPosts() {
         return posts;
     }
@@ -181,4 +174,27 @@ public class Travel implements Serializable {
     public void setUserToTravels(Collection<UserToTravel> userToTravels) {
         this.userToTravels = userToTravels;
     }
+
+    @OneToMany(mappedBy = "travel")
+    public Collection<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(Collection<Activity> activities) {
+        this.activities = activities;
+    }
+
+
+    @OneToMany(mappedBy = "travel")
+    public Collection<Movement> getMovements() {
+        return movements;
+    }
+
+    public void setMovements(Collection<Movement> movements) {
+        this.movements = movements;
+    }
+
+
+
+
 }

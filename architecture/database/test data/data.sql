@@ -13,7 +13,7 @@ INSERT INTO roles(
 			(3, 'banned')
 			;
 
-INSERT INTO "user"(
+INSERT INTO users(
              first_name, last_name, birthday, city_id, password, email,
             gender,  id_role)
     VALUES  ('Veronika', 'Ivanova','24.10.1995',37356, 'qwerty', 'nika@nika.nika' ,2, 0),

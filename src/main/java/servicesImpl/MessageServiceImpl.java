@@ -35,4 +35,17 @@ public class MessageServiceImpl implements MessageService {
     public Message get(Integer id) {
         return messageRepository.findOne(id);
     }
+
+    @Transactional
+    public List<Message> getAllBySenderId(Integer senderId) {
+        return messageRepository.getAllBySenderId(senderId);
+    }
+    @Transactional
+    public List<Message> getAllByRecipientId(Integer recipientId) {
+        return messageRepository.getAllByRecipientId(recipientId);
+    }
+    @Transactional
+    public List<Message> getChatOfTwoUsers(Integer user1, Integer user2) {
+        return messageRepository.findChatOfTwoUsers(user1, user2);
+    }
 }

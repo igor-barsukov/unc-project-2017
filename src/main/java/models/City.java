@@ -16,8 +16,6 @@ public class City implements Serializable {
     private String name;
     private State state;
     @JsonIgnore
-    private Collection<Plan> plans;
-    @JsonIgnore
     private Collection<User> users;
 
     public City() {
@@ -79,15 +77,6 @@ public class City implements Serializable {
 
     public void setState(State state) {
         this.state = state;
-    }
-
-    @OneToMany(mappedBy = "city")
-    public Collection<Plan> getPlans() {
-        return plans;
-    }
-
-    public void setPlans(Collection<Plan> plans) {
-        this.plans = plans;
     }
 
     @OneToMany(mappedBy = "city")

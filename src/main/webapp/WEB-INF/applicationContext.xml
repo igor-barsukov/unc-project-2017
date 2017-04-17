@@ -37,7 +37,7 @@
         <!--hibernate-->
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
-            <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL9Dialect" />
+            <property name="databasePlatform" value="org.hibernate.spatial.dialect.postgis.PostgisPG9Dialect" />
             <property name="showSql" value="true"/>
             <property name="generateDdl" value="true"/></bean>
         </property>

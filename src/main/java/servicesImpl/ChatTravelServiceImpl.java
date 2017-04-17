@@ -34,4 +34,19 @@ public class ChatTravelServiceImpl implements ChatTravelService {
     public ChatTravel get(Integer id) {
         return chatTravelRepository.findOne(id);
     }
+
+    @Transactional
+    public List<ChatTravel> getAllByUserId(Integer userId) {
+        return  chatTravelRepository.findAllByUserId(userId);
+    }
+
+    @Transactional
+    public List<ChatTravel> getAllByTravelId(Integer travelId) {
+        return  chatTravelRepository.findAllByTravelId(travelId);
+    }
+
+    @Transactional
+    public List<ChatTravel> getByTravelIdAndUserId(Integer travelId, Integer userId) {
+        return chatTravelRepository.findByTravelIdAndUserId(travelId,userId);
+    }
 }

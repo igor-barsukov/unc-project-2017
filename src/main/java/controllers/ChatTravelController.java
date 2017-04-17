@@ -29,6 +29,36 @@ public class ChatTravelController {
 
         return new ResponseEntity(chatTravel, HttpStatus.OK);
     }
+    @GetMapping("/chatTravels/user={id}")
+    public ResponseEntity getChatTravelByUser(@PathVariable("id") Integer id) {
+        List<ChatTravel> chatTravel = chatTravelService.getAllByUserId(id);
+        if (chatTravel == null) {
+            return new ResponseEntity("No ChatTravel found for user ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(chatTravel, HttpStatus.OK);
+    }
+
+    @GetMapping("/chatTravels/travel={id}")
+    public ResponseEntity getChatTravelByTravel(@PathVariable("travelId") Integer id) {
+        List<ChatTravel> chatTravel = chatTravelService.getAllByTravelId(id);
+        if (chatTravel == null) {
+            return new ResponseEntity("No ChatTravel found for travel with ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(chatTravel, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/chatTravels/get")
+    public ResponseEntity getChatTravelByTravelAndUser(@RequestParam("travelId") Integer travelId, @RequestParam("userId") Integer userId) {
+        List<ChatTravel> chatTravel = chatTravelService.getByTravelIdAndUserId(travelId, userId);
+        if (chatTravel == null) {
+            return new ResponseEntity("No ChatTravel found for such params", HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(chatTravel, HttpStatus.OK);
+    }
 
     @PostMapping(value = "/chatTravels")
     public ResponseEntity createChatTravel(@RequestBody ChatTravel chatTravel) {

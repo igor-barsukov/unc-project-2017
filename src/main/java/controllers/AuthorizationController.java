@@ -3,6 +3,7 @@ package controllers;
 /**
  * Created by acer-pc on 07.04.2017.
  */
+import models.helpers.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,11 @@ public class AuthorizationController {
     private UserService userService;
 
     @PostMapping(value = "/users/login")
-    public ResponseEntity login(@RequestBody String email, @RequestBody String password) {
-            if(userService.getByCredentials(email, password)==null)
+    public ResponseEntity createUser(@RequestBody Credentials credentials) {
+        if(userService.getByCredentials(credentials.getEmail(), credentials.getPassword())==null)
             return new ResponseEntity("No User found for such credentials", HttpStatus.NOT_FOUND);
-        else return new ResponseEntity(userService.getByEmail(email), HttpStatus.OK);
+        else return new ResponseEntity(userService.getByEmail(credentials.getEmail()), HttpStatus.OK);
     }
+
 
 }
