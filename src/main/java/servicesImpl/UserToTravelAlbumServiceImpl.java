@@ -3,7 +3,7 @@ package servicesImpl;
 import models.Travel;
 import models.User;
 import models.UserToTravel;
-import models.UserToTravelPK;
+import models.helpers.UserToTravelPK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

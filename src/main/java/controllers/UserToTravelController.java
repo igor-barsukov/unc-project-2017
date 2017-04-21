@@ -3,7 +3,7 @@ package controllers;
 import models.Travel;
 import models.User;
 import models.UserToTravel;
-import models.UserToTravelPK;
+import models.helpers.UserToTravelPK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

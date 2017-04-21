@@ -33,6 +33,10 @@ public class StateController {
         return new ResponseEntity(state, HttpStatus.OK);
     }
 
+    @GetMapping("/states/country/{id}")
+    public List getStateByCountryId(@PathVariable("id") Integer countryId) {
+      return  stateService.getByCountryId(countryId);
+    }
     @PostMapping(value = "/states")
     public ResponseEntity createState(@RequestBody State state) {
 
@@ -63,5 +67,7 @@ public class StateController {
 
         return new ResponseEntity(state, HttpStatus.OK);
     }
+
+
 
 }

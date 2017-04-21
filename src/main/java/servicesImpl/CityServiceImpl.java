@@ -34,4 +34,9 @@ public class CityServiceImpl implements CityService {
     public City get(Integer id) {
         return cityRepository.findOne(id);
     }
+
+    @Transactional
+    public  List<City> getByStateId(Integer stateId){
+        return  cityRepository.findByStateId(stateId);
+    }
 }

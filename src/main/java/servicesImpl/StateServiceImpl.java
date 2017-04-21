@@ -1,5 +1,6 @@
 package servicesImpl;
 
+import models.City;
 import models.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,10 @@ public class StateServiceImpl implements StateService{
     @Transactional
     public State get(Integer id) {
         return stateRepository.findOne(id);
+    }
+
+    @Transactional
+    public  List<State> getByCountryId(Integer countryId){
+        return  stateRepository.findByCountryId(countryId);
     }
 }
