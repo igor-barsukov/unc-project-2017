@@ -4,6 +4,7 @@ package controllers;
  * Created by acer-pc on 07.04.2017.
  */
 import models.helpers.Credentials;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ import javax.ws.rs.QueryParam;
 
 @RestController
 public class AuthorizationController {
+
+
     @Autowired
     private UserService userService;
 

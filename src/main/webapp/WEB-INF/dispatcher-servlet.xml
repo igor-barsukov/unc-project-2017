@@ -35,4 +35,10 @@
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="fontawesome-webfont.woff" location="/fonts/"/>
     <mvc:resources mapping="fontawesome-webfont.woff2" location="/fonts/"/>
+    <mvc:cors>
+        <mvc:mapping path="/**"
+            allowed-origins="http://localhost:4200/"
+            allowed-methods="GET, PUT"
+        />
+    </mvc:cors>
 </beans>
