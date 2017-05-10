@@ -33,4 +33,8 @@ public class ActivityServiceImpl implements ActivityService {
     public Activity get(Integer id) {
         return activityRepository.findOne(id);
     }
+
+    public List<Activity> getActivitiesByTravelId(Integer travelId) {
+        return activityRepository.getActivitiesByTravelId(travelId);
+    }
 }

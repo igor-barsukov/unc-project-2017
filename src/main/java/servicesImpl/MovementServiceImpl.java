@@ -33,4 +33,8 @@ public class MovementServiceImpl  implements MovementService{
     public Movement get(Integer id) {
         return movementRepository.findOne(id);
     }
+
+    public List<Movement> getMovementsByTravelId(Integer travelId) {
+        return movementRepository.getMovementsByTravelId(travelId);
+    }
 }

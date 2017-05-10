@@ -5,11 +5,13 @@ package controllers;
  */
 
 import models.Activity;
+import models.Travel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import services.ActivityService;
+import services.TravelService;
 
 import java.util.List;
 
@@ -20,46 +22,62 @@ import java.util.List;
 public class ActivityController {
 
     @Autowired
-    private ActivityService accommodationService;
+    private ActivityService activityService;
+    @Autowired
+    private TravelService travelService;
 
-    @GetMapping(path = "/activity")
+    @GetMapping(path = "/activities")
     public List getActivity() {
-        return accommodationService.getAll();
+        return activityService.getAll();
     }
 
-    @GetMapping("/activity/{id}")
+    @GetMapping("/activities/{id}")
     public ResponseEntity getActivity(@PathVariable("id") Integer id) {
-        Activity activity = accommodationService.get(id);
+        Activity activity = activityService.get(id);
         if (activity == null) {
             return new ResponseEntity("No Activity found for ID " + id, HttpStatus.NOT_FOUND);
         }
-
         return new ResponseEntity(activity, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/activity")
+    @GetMapping("/activities/travel/{id}")
+    public ResponseEntity getActivitiesByTravelId(@PathVariable("id") Integer id) {
+        List<Activity> activities = activityService.getActivitiesByTravelId(id);
+        if (activities == null) {
+            return new ResponseEntity("No Activity found for travel with  ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(activities, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/activities")
     public ResponseEntity createActivity(@RequestBody Activity activity) {
-
-        accommodationService.addOrUpdate(activity);
-
+        activityService.addOrUpdate(activity);
         return new ResponseEntity(activity, HttpStatus.OK);
     }
 
-    @DeleteMapping("/activity/{id}")
+    @PostMapping(value = "/activities/travel/{id}")
+    public ResponseEntity createActivityByTravelId(@RequestBody Activity activity, @PathVariable("id") Integer id) {
+        activity.setTravel(travelService.get(id));
+        activityService.addOrUpdate(activity);
+        return new ResponseEntity(activity, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/activities/{id}")
     public ResponseEntity deleteActivity(@PathVariable Integer id) {
 
-        if ( accommodationService.get(id)== null) {
+        if ( activityService.get(id)== null) {
             return new ResponseEntity("No Activity found for ID " + id, HttpStatus.NOT_FOUND);
         }
-        accommodationService.delete(id);
+        activityService.delete(id);
         return new ResponseEntity(id, HttpStatus.OK);
 
     }
 
-    @PutMapping("/activity/{id}")
+    @PutMapping("/activities/{id}")
     public ResponseEntity updateActivity(@PathVariable Integer id, @RequestBody Activity activity) {
 
-        activity = accommodationService.addOrUpdate(activity);
+        activity = activityService.addOrUpdate(activity);
 
         if ( activity ==null) {
             return new ResponseEntity("No Activity found for ID " + id, HttpStatus.NOT_FOUND);
