@@ -10,13 +10,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import com.vividsolutions.jts.geom.Point;
 
-/**
- * Created by acer-pc on 17.04.2017.
- */
+
+
 public class PointUserType implements UserType {
-
-
 
     @SuppressWarnings("rawtypes")
     public Class returnedClass()
@@ -53,22 +51,27 @@ public class PointUserType implements UserType {
             throws HibernateException, SQLException
     {
         assert names.length == 1;
-        if (resultSet.wasNull())
-        {
-            return null;
+        PGpoint result = null;
+        final Object point = resultSet.getObject(names[0]);
+        if (!resultSet.wasNull()) {
+            result = new PGpoint();
+            result.setValue(point.toString());
         }
-        final PGpoint point = new PGpoint(resultSet.getObject(names[0]).toString());
-        return point;
+        return result;
     }
 
 
     public void nullSafeSet(PreparedStatement statement, Object value, int index, SharedSessionContractImplementor sharedSessionContractImplementor)
             throws HibernateException, SQLException
     {
-        statement.setObject(index, value);
+      //  statement.setObject(index, value);
+        if (value == null) {
+            statement.setObject(index, new PGpoint(0.0, 0.0));
+        } else {
+            PGpoint v = (PGpoint) value;
+            statement.setObject(index, v);
+        }
     }
-
-
 
     public Object deepCopy(Object o) throws HibernateException
     {
