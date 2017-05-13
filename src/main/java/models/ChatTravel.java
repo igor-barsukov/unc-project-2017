@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by acer-pc on 07.03.2017.
  */
 @Entity
-@Table(name = "chat_travel", schema = "public", catalog = "TravelDB")
+@Table(name = "chat_travels", schema = "public", catalog = "TravelDB")
 public class ChatTravel implements Serializable {
     private Integer id;
     private Timestamp sendTime;

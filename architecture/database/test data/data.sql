@@ -58,7 +58,7 @@ INSERT INTO friend(
 			;
 
 
-	INSERT INTO user_to_travel(
+	INSERT INTO user_to_travels(
             user_id, travel_id, role_id)
     VALUES  (1, 1, 0),
 			(3, 1, 3),

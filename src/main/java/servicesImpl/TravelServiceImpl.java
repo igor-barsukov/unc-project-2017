@@ -32,7 +32,10 @@ public class TravelServiceImpl implements TravelService {
     public void delete(Integer id) {
         travelRepository.delete(id);
     }
-
+    @Transactional
+    public List<Travel> getByCountryId(Integer countryId){
+       return travelRepository.getByCountryId(countryId);
+    }
 
     @Transactional
     public Travel get(Integer id) {

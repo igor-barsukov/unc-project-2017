@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by acer-pc on 07.03.2017.
  */
 @Entity
-@Table(name = "comment_photo", schema = "public", catalog = "TravelDB")
+@Table(name = "comment_photos", schema = "public", catalog = "TravelDB")
 public class CommentPhoto implements Serializable {
     private Integer id;
     private String comment;

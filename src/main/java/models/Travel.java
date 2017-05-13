@@ -32,7 +32,8 @@ public class Travel implements Serializable {
     private Collection<Activity> activities;
     @JsonIgnore
     private Collection<Movement> movements;
-
+    @JsonIgnore
+    private Collection<Country> countries;
     public Travel() {
     }
 
@@ -194,7 +195,14 @@ public class Travel implements Serializable {
         this.movements = movements;
     }
 
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "travels")
+    public Collection<Country> getCountries() {
+        return countries;
+    }
 
+    public void setCountries(Collection<Country> countries) {
+        this.countries = countries;
+    }
 
 
 }

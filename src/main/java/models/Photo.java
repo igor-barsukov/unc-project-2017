@@ -1,6 +1,8 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Type;
+import org.postgresql.geometric.PGpoint;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +20,7 @@ public class Photo implements Serializable {
     private Collection<CommentPhoto> comments;
     private Album album;
     private User owner;
+    private PGpoint coordinates;
 
     public Photo() {
     }
@@ -77,6 +80,17 @@ public class Photo implements Serializable {
 
     public void setComments(Collection<CommentPhoto> comments) {
         this.comments = comments;
+    }
+
+    @Basic
+    @Column(name = "coordinates", columnDefinition = "point", nullable = true)
+    @Type(type = "models.helpers.PointUserType")
+    public PGpoint getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(PGpoint coordinates) {
+        this.coordinates = coordinates;
     }
 
     @ManyToOne

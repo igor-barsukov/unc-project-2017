@@ -33,6 +33,15 @@ public class TravelController {
         return new ResponseEntity(travel, HttpStatus.OK);
     }
 
+    @GetMapping("/travels/country={id}")
+    public ResponseEntity getTravelByCountry(@PathVariable("id") Integer id) {
+        List<Travel> travels = travelService.getByCountryId(id);
+        if (travels == null) {
+            return new ResponseEntity("No Travel found for country with ID " + id, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(travels, HttpStatus.OK);
+    }
     @PostMapping(value = "/travels")
     public ResponseEntity createTravel(@RequestBody Travel travel) {
 

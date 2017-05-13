@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by acer-pc on 07.03.2017.
  */
 @Entity
-@Table(name = "post_of_travel", schema = "public", catalog = "TravelDB")
+@Table(name = "post_of_travels", schema = "public", catalog = "TravelDB")
 public class PostOfTravel implements Serializable {
     private Integer id;
     private String body;

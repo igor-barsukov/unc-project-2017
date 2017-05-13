@@ -16,6 +16,8 @@ public class Country implements Serializable {
     private String name;
     @JsonIgnore
     private Collection<State> states;
+    @JsonIgnore
+    private Collection<Travel> travels;
 
     public Country(String name) {
         this.name = name;
@@ -75,4 +77,18 @@ public class Country implements Serializable {
     public void setStates(Collection<State> states) {
         this.states = states;
     }
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "county_to_travels", catalog = "TravelDB", joinColumns = {
+            @JoinColumn(name = "country_id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "travel_id",
+                    nullable = false, updatable = false) })
+    public Collection<Travel> getTravels() {
+        return travels;
+    }
+
+    public void setTravels(Collection<Travel> travels) {
+        this.travels = travels;
+    }
+
 }

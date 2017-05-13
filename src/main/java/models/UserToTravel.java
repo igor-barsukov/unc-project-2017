@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by acer-pc on 07.03.2017.
  */
 @Entity
-@Table(name = "user_to_travel", schema = "public", catalog = "TravelDB")
+@Table(name = "user_to_travels", schema = "public", catalog = "TravelDB")
 @IdClass(UserToTravelPK.class)
 public class UserToTravel implements Serializable {
     private Integer userId;

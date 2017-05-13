@@ -40,7 +40,7 @@ public class ChatTravelController {
     }
 
     @GetMapping("/chatTravels/travel={id}")
-    public ResponseEntity getChatTravelByTravel(@PathVariable("travelId") Integer id) {
+    public ResponseEntity getChatTravelByTravel(@PathVariable("id") Integer id) {
         List<ChatTravel> chatTravel = chatTravelService.getAllByTravelId(id);
         if (chatTravel == null) {
             return new ResponseEntity("No ChatTravel found for travel with ID " + id, HttpStatus.NOT_FOUND);
