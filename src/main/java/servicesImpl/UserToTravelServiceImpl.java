@@ -13,12 +13,13 @@ import services.UserToTravelService;
 import java.util.List;
 
 @Service
-public class UserToTravelAlbumServiceImpl implements UserToTravelService {
+public class UserToTravelServiceImpl implements UserToTravelService {
 
     @Autowired
     private UserToTravelRepository userToTravelRepository;
     @Transactional
     public UserToTravel addOrUpdate(UserToTravel obj) {
+
         return userToTravelRepository.saveAndFlush(obj);
     }
     @Transactional
@@ -40,5 +41,10 @@ public class UserToTravelAlbumServiceImpl implements UserToTravelService {
     @Transactional
     public List<User> getUsersByTravelId (Integer travelId){
         return userToTravelRepository.getByTravelId(travelId);
+    }
+
+    @Transactional
+    public List<UserToTravel> getUserToTravelByTravelId(Integer travelId){
+        return  userToTravelRepository.getUserToTravelByTravelId(travelId);
     }
 }

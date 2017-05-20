@@ -13,9 +13,13 @@ import java.util.List;
  * Created by acer-pc on 08.03.2017.
  */
 public interface UserToTravelRepository extends JpaRepository<UserToTravel, UserToTravelPK> {
-    @Query("select ut.travel from UserToTravel ut where ut.userId=?1")
+    @Query("select ut.PK.travel from UserToTravel ut where ut.PK.user.id=?1")
     List<Travel> getByUserId(Integer userId);
 
-    @Query("select ut.user from UserToTravel ut where ut.travelId=?1")
+    @Query("select ut.PK.user from UserToTravel ut where ut.PK.travel.id=?1")
     List<User> getByTravelId(Integer travelId);
+
+    @Query("select ut from UserToTravel ut where ut.PK.travel.id=?1")
+    List<UserToTravel> getUserToTravelByTravelId(Integer travelId);
+
 }

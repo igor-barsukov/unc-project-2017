@@ -10,43 +10,48 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "user_to_travels", schema = "public", catalog = "TravelDB")
-@IdClass(UserToTravelPK.class)
+@AssociationOverrides({
+        @AssociationOverride(name ="PK.user", joinColumns = @JoinColumn(name ="user_id")),
+        @AssociationOverride(name ="PK.travel", joinColumns = @JoinColumn(name ="travel_id"))
+})
 public class UserToTravel implements Serializable {
-    private Integer userId;
-    private Integer travelId;
-    private User user;
-    private Travel travel;
+    UserToTravelPK pk=new UserToTravelPK();
     private Role role;
 
     public UserToTravel() {
     }
 
-    public UserToTravel(Integer userId, Integer travelId, Role role) {
-        this.userId = userId;
-        this.travelId = travelId;
+    public UserToTravel(User user, Travel travel, Role role) {
+        pk.setUser(user);
+        pk.setTravel(travel);
         this.role=role;
     }
 
-    @Id
-    @Column(name = "user_id", nullable = false)
-    public Integer getUserId() {
-        return userId;
+    @EmbeddedId
+    public UserToTravelPK getPK() {
+        return pk;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setPK(UserToTravelPK pk) {
+        this.pk = pk;
     }
 
-    @Id
-    @Column(name = "travel_id", nullable = false)
-    public Integer getTravelId() {
-        return travelId;
+    @Transient
+    public User getUser() {
+        return getPK().getUser();
     }
 
-    public void setTravelId(Integer travelId) {
-        this.travelId = travelId;
+    public void setUser(User user) {
+        getPK().setUser(user);
+    }
+    @Transient
+    public Travel getTravel() {
+        return getPK().getTravel();
     }
 
+    public void setTravel(Travel travel) {
+        getPK().setTravel(travel);
+    }
 
 
     @Override
@@ -56,37 +61,15 @@ public class UserToTravel implements Serializable {
 
         UserToTravel that = (UserToTravel) o;
 
-        if (userId != that.userId) return false;
-        if (travelId != that.travelId) return false;
+        if (((UserToTravel) o).pk != that.pk) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = userId;
-        result = 31 * result + travelId;
+        int result = pk.hashCode();
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "travel_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false )
-    public Travel getTravel() {
-        return travel;
-    }
-
-    public void setTravel(Travel travel) {
-        this.travel = travel;
     }
 
     @ManyToOne

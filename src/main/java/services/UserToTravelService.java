@@ -13,4 +13,5 @@ import java.util.List;
 public interface UserToTravelService  extends CRUDService<UserToTravel, UserToTravelPK> {
     List<Travel> getTravelsByUserId(Integer userId);
     List<User> getUsersByTravelId (Integer travelId);
+    List<UserToTravel> getUserToTravelByTravelId (Integer travelId);
 }

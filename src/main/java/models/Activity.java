@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import org.postgresql.geometric.PGpoint;
 
@@ -17,8 +18,8 @@ import org.postgresql.geometric.PGpoint;
 public class Activity implements Serializable {
     private Integer id;
     private String name;
-    private Date startTime;
-    private Date endTime;
+    private Timestamp startTime;
+    private Timestamp endTime;
     private String address;
     private String description;
     private Travel travel;
@@ -43,7 +44,7 @@ public class Activity implements Serializable {
     public Activity() {
     }
 
-    public Activity(Integer id, String name, Date startTime, Date endTime, Travel travel) {
+    public Activity(Integer id, String name, Timestamp startTime, Timestamp endTime, Travel travel) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;
@@ -74,25 +75,21 @@ public class Activity implements Serializable {
 
     @Basic
     @Column(name = "start_time", nullable = false)
-    @DateTimeFormat(pattern = "yyyy-M-dd HH:mm")
-    @Temporal(value = TemporalType.TIMESTAMP)
-    public Date getStartTime() {
+    public Timestamp getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(Timestamp startTime) {
         this.startTime = startTime;
     }
 
     @Basic
     @Column(name = "end_time", nullable = false)
-    @DateTimeFormat(pattern = "yyyy-M-dd HH:mm")
-    @Temporal(value = TemporalType.TIMESTAMP)
-    public Date getEndTime() {
+    public Timestamp getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
 

@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import com.vividsolutions.jts.geom.Point;
+
 
 
 
@@ -61,15 +61,15 @@ public class PointUserType implements UserType {
     }
 
 
+
     public void nullSafeSet(PreparedStatement statement, Object value, int index, SharedSessionContractImplementor sharedSessionContractImplementor)
             throws HibernateException, SQLException
     {
-      //  statement.setObject(index, value);
         if (value == null) {
             statement.setObject(index, new PGpoint(0.0, 0.0));
         } else {
             PGpoint v = (PGpoint) value;
-            statement.setObject(index, v);
+            statement.setObject(index, value);
         }
     }
 
@@ -96,10 +96,16 @@ public class PointUserType implements UserType {
         return serializable;
     }
 
-    public Object replace(Object o1, Object o2, Object o3) throws HibernateException
-    {
-        return this;
+
+        public Object replace(Object original, Object target, Object owner) throws HibernateException {
+        if (original instanceof PGpoint) {
+            final PGpoint value = (PGpoint) original;
+            return new PGpoint(value.x, value.y);
+        } else {
+            return new PGpoint(0.0, 0.0);
+        }
     }
+
 
     public int[] sqlTypes()
     {

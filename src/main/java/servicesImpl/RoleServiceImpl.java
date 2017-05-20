@@ -34,4 +34,8 @@ public class RoleServiceImpl implements RoleService {
     public Role get(Integer id) {
         return roleRepository.findOne(id);
     }
+    @Transactional
+    public Role getByName(String name) {
+        return roleRepository.findByName(name);
+    }
 }

@@ -1,34 +1,43 @@
 package models.helpers;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import models.Travel;
+import models.User;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by acer-pc on 07.03.2017.
  */
+@Embeddable
 public class UserToTravelPK implements Serializable {
-    private Integer userId;
-    private Integer travelId;
+    private User user;
+    private Travel travel;
 
-    @Column(name = "user_id", nullable = false)
-    @Id
-    public Integer getUserId() {
-        return userId;
+    public UserToTravelPK(User user, Travel travel) {
+        this.user = user;
+        this.travel = travel;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public UserToTravelPK(){}
+
+
+    @ManyToOne
+    public User getUser() {
+        return user;
     }
 
-    @Column(name = "travel_id", nullable = false)
-    @Id
-    public Integer getTravelId() {
-        return travelId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public void setTravelId(Integer travelId) {
-        this.travelId = travelId;
+    @ManyToOne
+    public Travel getTravel() {
+        return travel;
+    }
+
+    public void setTravel(Travel travel) {
+        this.travel = travel;
     }
 
     @Override
@@ -38,16 +47,16 @@ public class UserToTravelPK implements Serializable {
 
         UserToTravelPK that = (UserToTravelPK) o;
 
-        if (userId != that.userId) return false;
-        if (travelId != that.travelId) return false;
+        if (user != that.user) return false;
+        if (travel != that.travel) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = userId;
-        result = 31 * result + travelId;
+        int result = user.hashCode();
+        result = 31 * result + travel.hashCode();
         return result;
     }
 }

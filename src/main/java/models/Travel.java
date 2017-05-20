@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Collection;
 
@@ -16,8 +17,8 @@ import java.util.Collection;
 public class Travel implements Serializable {
     private Integer id;
     private String name;
-    private Date startDate;
-    private Date endDate;
+    private Timestamp startDate;
+    private Timestamp endDate;
     private String info;
     private boolean isActive;
     @JsonIgnore
@@ -37,7 +38,7 @@ public class Travel implements Serializable {
     public Travel() {
     }
 
-    public Travel(String name, Date startDate, Date endDate, String info, boolean isActive) {
+    public Travel(String name, Timestamp startDate, Timestamp endDate, String info, boolean isActive) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -70,25 +71,21 @@ public class Travel implements Serializable {
 
     @Basic
     @Column(name = "start_date", nullable = false)
-    @DateTimeFormat(pattern = "yyyy-M-dd")
-    @Temporal(value = TemporalType.DATE )
-    public Date getStartDate() {
+    public Timestamp getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Timestamp startDate) {
         this.startDate = startDate;
     }
 
     @Basic
     @Column(name = "end_date", nullable = true)
-    @DateTimeFormat(pattern = "yyyy-M-dd")
-    @Temporal(value = TemporalType.DATE )
-    public Date getEndDate() {
+    public Timestamp getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Timestamp endDate) {
         this.endDate = endDate;
     }
 
@@ -167,7 +164,7 @@ public class Travel implements Serializable {
         this.posts = posts;
     }
 
-    @OneToMany(mappedBy = "travel")
+    @OneToMany(mappedBy = "PK.travel")
     public Collection<UserToTravel> getUserToTravels() {
         return userToTravels;
     }

@@ -1,7 +1,6 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Proxy;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -32,7 +31,7 @@ public class User implements Serializable {
     @JsonIgnore
     private Collection<Message> sentMessages;
     @JsonIgnore
-    private Collection<Message> reseivedMessages;
+    private Collection<Message> receivedMessages;
     @JsonIgnore
     private Collection<Photo> photos;
     @JsonIgnore
@@ -222,12 +221,12 @@ public class User implements Serializable {
 
 
     @OneToMany(mappedBy = "recipient")
-    public Collection<Message> getReseivedMessages() {
-        return reseivedMessages;
+    public Collection<Message> getReceivedMessages() {
+        return receivedMessages;
     }
 
-    public void setReseivedMessages(Collection<Message> reseivedMessages) {
-        this.reseivedMessages = reseivedMessages;
+    public void setReceivedMessages(Collection<Message> reseivedMessages) {
+        this.receivedMessages = reseivedMessages;
     }
 
 
@@ -281,7 +280,7 @@ public class User implements Serializable {
     }
 
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "PK.user")
     public Collection<UserToTravel> getUserToTravels() {
         return userToTravels;
     }
