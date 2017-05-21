@@ -17,7 +17,7 @@
                             http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <bean id="propertyConfigurer"  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="WEB-INF/database.properties" />
+        <property name="location" value="WEB-INF/util.properties" />
     </bean>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -46,11 +46,31 @@
                   value="models"/>
     </bean>
 
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="username" value="${java.mail.username}"/>
+        <property name="password" value="${java.mail.password}"/>
+        <property name="port" value="465"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.starttls.required">true</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.host">${java.mail.host}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="resourceLoaderPath" value="/WEB-INF/views/mail/"/>
+    </bean>
     <jpa:repositories base-package="repositories" />
     <context:annotation-config />
     <context:component-scan base-package="servicesImpl" />
     <tx:annotation-driven transaction-manager="transactionManager" />
     <import resource="security.xml"/>
+
 
 
 </beans>

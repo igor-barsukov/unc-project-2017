@@ -78,7 +78,7 @@ public class Country implements Serializable {
         this.states = states;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "county_to_travels", catalog = "TravelDB", joinColumns = {
             @JoinColumn(name = "country_id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "travel_id",

@@ -55,8 +55,9 @@ public class MovementController {
         movementService.addOrUpdate(movement);
         return new ResponseEntity(movement, HttpStatus.OK);
     }
-    @PostMapping(value = "/movements/travel/{id}")
-    public ResponseEntity createMovementByTravelId(@RequestBody Movement movement, @PathVariable("id") Integer id) {
+
+    @PostMapping(value = "/newmovements")
+    public ResponseEntity createMovementByTravelId(@RequestBody Movement movement, @RequestParam("travelId") Integer id) {
 
         movement.setTravel(travelService.get(id));
         movementService.addOrUpdate(movement);

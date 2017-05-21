@@ -56,8 +56,8 @@ public class ActivityController {
         return new ResponseEntity(activity, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/activities/travel/{id}")
-    public ResponseEntity createActivityByTravelId(@RequestBody Activity activity, @PathVariable("id") Integer id) {
+    @PostMapping(value = "/newactivities")
+    public ResponseEntity createActivityByTravelId(@RequestBody Activity activity, @RequestParam("travelId") Integer id) {
         activity.setTravel(travelService.get(id));
         activityService.addOrUpdate(activity);
         return new ResponseEntity(activity, HttpStatus.OK);
