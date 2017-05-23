@@ -1,0 +1,277 @@
+{  
+   "kind":"Template",
+   "apiVersion":"v1",
+   "metadata":{  
+      "name":"jj-back-end",
+      "creationTimestamp":null,
+      "annotations":{  
+         "openshift.io/display-name":"Journey Joys (backend application)",
+         "description":"Spring application with hibernate"
+      }
+   },
+   "message":"The following service(s) have been created in your project: ${BACKEND_SERVICE_NAME}.\n\n       Username: ${PG_USER}\n       Password: ${PG_PASSWORD}\n  Database Name: ${PG_DATABASE}\n Connection URL: postgresql://${DATABASE_SERVICE_NAME}:5432/\n\nFor more information about using this template, including OpenShift considerations, see https://github.com/sclorg/postgresql-container/blob/master/9.5.",
+   "labels":{  
+      "template":"jj-back-end-template"
+   },
+   "objects":[  
+      {  
+         "kind":"Service",
+         "apiVersion":"v1",
+         "metadata":{  
+            "name":"${BACKEND_SERVICE_NAME}",
+            "creationTimestamp":null
+         },
+         "spec":{  
+            "ports":[  
+               {  
+                  "name":"jj-back-end-in",
+                  "protocol":"TCP",
+                  "port":8181,
+                  "targetPort":8181,
+                  "nodePort":0
+               }
+            ],
+            "selector":{  
+               "name":"${BACKEND_SERVICE_NAME}"
+            },
+            "type":"ClusterIP",
+            "sessionAffinity":"None"
+         },
+         "status":{  
+            "loadBalancer":{  
+
+            }
+         }
+      },
+      {  
+         "apiVersion":"v1",
+         "kind":"ImageStream",
+         "metadata":{  
+            "name":"jj-registry"
+         },
+         "spec":{  
+            "dockerImageRepository":"necronir/unc-registry"
+         }
+      },
+      {  
+         "kind":"DeploymentConfig",
+         "apiVersion":"v1",
+         "metadata":{  
+            "name":"${BACKEND_SERVICE_NAME}",
+            "creationTimestamp":null
+         },
+         "spec":{  
+            "strategy":{  
+               "type":"Recreate"
+            },
+            "triggers":[  
+               {  
+                  "type":"ImageChange",
+                  "imageChangeParams":{  
+                     "automatic":true,
+                     "containerNames":[  
+                        "jj-back-end"
+                     ],
+                     "from":{  
+                        "kind":"ImageStreamTag",
+                        "name":"jj-registry:${TAG}",
+                        "namespace":"${NAMESPACE}"
+                     },
+                     "lastTriggeredImage":""
+                  }
+               },
+               {  
+                  "type":"ConfigChange"
+               }
+            ],
+            "replicas":1,
+            "selector":{  
+               "name":"${BACKEND_SERVICE_NAME}"
+            },
+            "template":{  
+               "metadata":{  
+                  "creationTimestamp":null,
+                  "labels":{  
+                     "name":"${BACKEND_SERVICE_NAME}"
+                  }
+               },
+               "spec":{  
+                  "volumes":[  
+                     {  
+                        "name":"data",
+                        "emptyDir":{  
+
+                        }
+                     }
+                  ],
+                  "containers":[  
+                     {  
+                        "name":"jj-back-end",
+                        "image":" ",
+                        "ports":[  
+                           {  
+                              "containerPort":8181,
+                              "protocol":"TCP"
+                           }
+                        ],
+                        "livenessProbe":{  
+                           "timeoutSeconds":1,
+                           "initialDelaySeconds":120,
+                           "tcpSocket":{  
+                              "port":8181
+                           }
+                        },
+                        "env":[  
+                           {  
+                              "name":"unc_jdbc_host",
+                              "value":"${UNC_JDBC_HOST}"
+                           },
+                           {  
+                              "name":"unc_jdbc_port",
+                              "value":"${UNC_JDBC_PORT}"
+                           },
+                           {  
+                              "name":"unc_database",
+                              "value":"${UNC_DATABASE}"
+                           },
+                           {  
+                              "name":"unc_jdbc_username",
+                              "value":"${UNC_JDBC_USERNAME}"
+                           },
+                           {  
+                              "name":"unc_jdbc_password",
+                              "value":"${UNC_JDBC_PASSWORD}"
+                           },
+                           {  
+                              "name":"unc_mail_username",
+                              "value":"${UNC_MAIL_USERNAME}"
+                           },
+                           {  
+                              "name":"unc_mail_password",
+                              "value":"${UNC_MAIL_PASSWORD}"
+                           },
+                           {  
+                              "name":"unc_mail_host",
+                              "value":"${UNC_MAIL_HOST}"
+                           }
+                        ],
+                        "resources":{  
+                           "limits":{  
+                              "memory":"${MEMORY_LIMIT}"
+                           }
+                        },
+                        "volumeMounts":[  
+                           {  
+                              "mountPath":"/data",
+                              "name":"data"
+                           }
+                        ],
+                        "terminationMessagePath":"/dev/termination-log",
+                        "imagePullPolicy":"IfNotPresent",
+                        "capabilities":{  
+
+                        },
+                        "securityContext":{  
+                           "capabilities":{  
+
+                           },
+                           "privileged":false
+                        }
+                     }
+                  ],
+                  "restartPolicy":"Always",
+                  "dnsPolicy":"ClusterFirst"
+               }
+            }
+         },
+         "status":{  
+
+         }
+      }
+   ],
+   "parameters":[  
+      {  
+         "name":"MEMORY_LIMIT",
+         "displayName":"Memory Limit",
+         "description":"Maximum amount of memory the container can use.",
+         "value":"512Mi",
+         "required":true
+      },
+      {  
+         "name":"NAMESPACE",
+         "displayName":"Namespace",
+         "description":"The OpenShift Namespace where the ImageStream resides.",
+         "value":"jj"
+      },
+      {  
+         "name":"BACKEND_SERVICE_NAME",
+         "displayName":"Database Service Name",
+         "description":"The name of the OpenShift Service exposed for the database.",
+         "value":"jj-back-end",
+         "required":true
+      },
+      {  
+         "name":"TAG",
+         "displayName":"Tag",
+         "description":"Tag in registry.",
+         "value":"application",
+         "required":true
+      },
+      {  
+         "name":"UNC_JDBC_HOST",
+         "displayName":"PostgreSQL Host Name",
+         "description":"Host of the PostgreSQL database accessed.",
+         "value":"postgresql",
+         "required":true
+      },
+      {  
+         "name":"UNC_JDBC_PORT",
+         "displayName":"PostgreSQL Port",
+         "description":"Port of the PostgreSQL database accessed.",
+         "value":"5432",
+         "required":true
+      },
+      {  
+         "name":"UNC_DATABASE",
+         "displayName":"PostgreSQL Database Name",
+         "description":"Name of the PostgreSQL database accessed.",
+         "value":"traveldb",
+         "required":true
+      },
+      {  
+         "name":"UNC_JDBC_USERNAME",
+         "displayName":"PostgreSQL User Name",
+         "description":"User of the PostgreSQL database accessed.",
+         "value":"postgres",
+         "required":true
+      },
+      {  
+         "name":"UNC_JDBC_PASSWORD",
+         "displayName":"PostgreSQL Password",
+         "description":"Password of the PostgreSQL database accessed.",
+         "value":"postgres",
+         "required":true
+      },
+      {  
+         "name":"UNC_MAIL_USERNAME",
+         "displayName":"Mail Username",
+         "description":"Username for sending email.",
+         "value":"JourneyJoins@gmail.com",
+         "required":true
+      },
+      {  
+         "name":"UNC_MAIL_PASSWORD",
+         "displayName":"Mail Password",
+         "description":"Password for sending emai.",
+         "value":"JourneyJoins2017",
+         "required":true
+      },
+      {  
+         "name":"UNC_MAIL_HOST",
+         "displayName":"Mail Host",
+         "description":"Host for sending emai.",
+         "value":"smtp.gmail.com",
+         "required":true
+      }
+   ]
+}
