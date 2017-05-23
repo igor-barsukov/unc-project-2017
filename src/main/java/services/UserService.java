@@ -10,6 +10,5 @@ import java.util.List;
 public interface UserService extends CRUDService<User, Integer>{
     List<User> getByFirstNameAndLastName(String firstName, String lastName);
     User getByEmail(String email);
-
     User getByCredentials(String email, String password);
 }
