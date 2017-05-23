@@ -29,7 +29,7 @@ Additional files are required for successful dockerization:
 
 As a result you will get docker image with application.
 
-#How to run docker container step-by-step
+# How to run docker container step-by-step
 
 It runs docker container with tomcat 8 and application.
 
