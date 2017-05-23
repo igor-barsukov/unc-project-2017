@@ -742,6 +742,7 @@ CREATE TABLE travels (
     start_date date NOT NULL,
     end_date date,
     info text,
+    photo character varying(100),
     is_active boolean NOT NULL
 );
 

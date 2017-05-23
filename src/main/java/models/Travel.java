@@ -21,6 +21,8 @@ public class Travel implements Serializable {
     private Timestamp endDate;
     private String info;
     private boolean isActive;
+    private String photo;
+
     @JsonIgnore
     private Collection<Album> albums;
     @JsonIgnore
@@ -96,6 +98,16 @@ public class Travel implements Serializable {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    @Basic
+    @Column(name = "photo", nullable = true, length = -1)
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     @Basic
