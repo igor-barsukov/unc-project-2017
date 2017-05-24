@@ -22,6 +22,16 @@ public class AlbumController {
         return albumService.getAll();
     }
 
+    @GetMapping("/albums/travel={id}")
+    public ResponseEntity getAlbumByTravelID(@PathVariable("id") Integer travelID) {
+        Album album = albumService.getAlbumByTravelID(travelID);
+        if (album == null) {
+            return new ResponseEntity("No Album found for TRAVEL " + travelID, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(album, HttpStatus.OK);
+    }
+
     @GetMapping("/albums/{id}")
     public ResponseEntity getAlbum(@PathVariable("id") Integer id) {
         Album album = albumService.get(id);

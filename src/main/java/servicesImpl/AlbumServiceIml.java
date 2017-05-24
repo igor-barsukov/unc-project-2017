@@ -34,4 +34,8 @@ public class AlbumServiceIml implements AlbumService {
     public Album get(Integer id) {
         return albumRepository.findOne(id);
     }
+    @Transactional
+    public Album getAlbumByTravelID(Integer travelID) {
+        return  albumRepository.getAlbumByTravelID(travelID);
+    }
 }
