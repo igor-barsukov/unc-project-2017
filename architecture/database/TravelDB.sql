@@ -533,7 +533,7 @@ CREATE TABLE photos (
     id integer NOT NULL,
     album_id integer NOT NULL,
     owner_id integer NOT NULL,
-    path_to_photo character varying(100) NOT NULL,
+    path_to_photo character varying(1000) NOT NULL,
     coordinates point
 );
 
@@ -742,7 +742,7 @@ CREATE TABLE travels (
     start_date date NOT NULL,
     end_date date,
     info text,
-    photo character varying(100),
+    photo character varying(1000),
     is_active boolean NOT NULL
 );
 
@@ -789,7 +789,7 @@ CREATE TABLE users (
     gender integer NOT NULL,
     info text,
     id_role integer,
-    user_photo character varying(100)
+    user_photo character varying(1000)
 );
 
 
