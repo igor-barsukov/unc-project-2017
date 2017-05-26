@@ -1,6 +1,7 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -103,11 +104,13 @@ public class User implements Serializable {
     }
 
     @Basic
+    @JsonIgnore
     @Column(name = "password", nullable = false, length = 150)
     public String getPassword() {
         return password;
     }
 
+    @JsonProperty
     public void setPassword(String password) {
         this.password = password;
     }
@@ -270,11 +273,12 @@ public class User implements Serializable {
     }
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "id_role", referencedColumnName = "id")
     public Role getRole() {
         return role;
     }
-
+    @JsonProperty
     public void setRole(Role role) {
         this.role = role;
     }
