@@ -49,7 +49,6 @@ public class UserController {
     @PostMapping(value = "/users")
     public ResponseEntity createUser(@RequestBody User user) {
 
-        bcryptEncoder.encode(user.getPassword());
         userService.addOrUpdate(user);
 
         return new ResponseEntity(user, HttpStatus.OK);
