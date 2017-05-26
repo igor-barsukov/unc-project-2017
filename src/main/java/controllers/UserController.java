@@ -6,6 +6,7 @@ package controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import models.User;
 import java.util.List;
@@ -17,6 +18,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private BCryptPasswordEncoder bcryptEncoder;
 
     @GetMapping(path = "/users")
     public List getUsers() {
@@ -45,6 +49,7 @@ public class UserController {
     @PostMapping(value = "/users")
     public ResponseEntity createUser(@RequestBody User user) {
 
+        bcryptEncoder.encode(user.getPassword());
         userService.addOrUpdate(user);
 
         return new ResponseEntity(user, HttpStatus.OK);

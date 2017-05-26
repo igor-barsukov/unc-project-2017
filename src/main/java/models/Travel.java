@@ -148,7 +148,7 @@ public class Travel implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "travel")
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.REMOVE)
     public Collection<Album> getAlbums() {
         return albums;
     }
@@ -175,7 +175,7 @@ public class Travel implements Serializable {
         this.posts = posts;
     }
 
-    @OneToMany(mappedBy = "PK.travel")
+    @OneToMany(mappedBy = "PK.travel", cascade = CascadeType.REMOVE)
     public Collection<UserToTravel> getUserToTravels() {
         return userToTravels;
     }
@@ -184,7 +184,7 @@ public class Travel implements Serializable {
         this.userToTravels = userToTravels;
     }
 
-    @OneToMany(mappedBy = "travel")
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.REMOVE)
     public Collection<Activity> getActivities() {
         return activities;
     }
@@ -194,7 +194,7 @@ public class Travel implements Serializable {
     }
 
 
-    @OneToMany(mappedBy = "travel")
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.REMOVE)
     public Collection<Movement> getMovements() {
         return movements;
     }

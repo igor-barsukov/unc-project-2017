@@ -3,11 +3,14 @@ package controllers;
 /**
  * Created by acer-pc on 07.04.2017.
  */
+import models.User;
 import models.helpers.Credentials;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import services.UserService;
 
@@ -30,6 +33,5 @@ public class AuthorizationController {
             return new ResponseEntity("No User found for such credentials", HttpStatus.NOT_FOUND);
         else return new ResponseEntity(userService.getByEmail(credentials.getEmail()), HttpStatus.OK);
     }
-
 
 }
