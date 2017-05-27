@@ -253,7 +253,7 @@ public class User implements Serializable {
     }
 
     @ManyToOne
-    @JoinColumn(name = "city_id", referencedColumnName = "city_id")
+    @JoinColumn(name = "city_id", referencedColumnName = "id")
     public City getCity() {
         return city;
     }
@@ -274,7 +274,7 @@ public class User implements Serializable {
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(name = "id_role", referencedColumnName = "id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     public Role getRole() {
         return role;
     }

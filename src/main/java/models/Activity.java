@@ -23,11 +23,11 @@ public class Activity implements Serializable {
     private String address;
     private String description;
     private Travel travel;
-    private Integer price;
+    private Double price;
     private String ticket;
     private PGpoint coordinates;
     private ActivityType activityType;
-
+    private City city;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -65,11 +65,11 @@ public class Activity implements Serializable {
 
     @Basic
     @Column(name = "price", nullable = true)
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -185,4 +185,16 @@ public class Activity implements Serializable {
     public void setActivityType(ActivityType activityType) {
         this.activityType = activityType;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "city_id", referencedColumnName = "id", nullable = true)
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+
 }

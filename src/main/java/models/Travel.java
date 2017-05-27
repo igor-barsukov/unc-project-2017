@@ -35,7 +35,7 @@ public class Travel implements Serializable {
     private Collection<Activity> activities;
     @JsonIgnore
     private Collection<Movement> movements;
-    private Collection<Country> countries;
+    private Collection<City> cities;
     public Travel() {
     }
 
@@ -204,12 +204,12 @@ public class Travel implements Serializable {
     }
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "travels")
-    public Collection<Country> getCountries() {
-        return countries;
+    public Collection<City> getCities() {
+        return cities;
     }
 
-    public void setCountries(Collection<Country> countries) {
-        this.countries = countries;
+    public void setCities(Collection<City> cities) {
+        this.cities = cities;
     }
 
 

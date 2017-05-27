@@ -78,7 +78,7 @@ public class State implements Serializable {
     }
 
     @ManyToOne
-    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
+    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false)
     public Country getCountry() {
         return country;
     }

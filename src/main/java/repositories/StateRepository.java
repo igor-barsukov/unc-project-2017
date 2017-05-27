@@ -14,5 +14,7 @@ public interface StateRepository extends JpaRepository<State, Integer> {
 
     @Query("SELECT t FROM State t WHERE t.country.id = ?1")
     List<State> findByCountryId(Integer countryId);
+
+    State findByName(String name);
 }
 

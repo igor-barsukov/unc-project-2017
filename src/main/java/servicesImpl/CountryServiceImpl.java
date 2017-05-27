@@ -34,4 +34,9 @@ public class CountryServiceImpl implements CountryService {
     public Country get(Integer id) {
         return countryRepository.findOne(id);
     }
+
+    @Transactional
+    public Country findByName(String name) {
+        return countryRepository.findByName(name);
+    }
 }

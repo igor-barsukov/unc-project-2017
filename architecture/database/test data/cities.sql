@@ -1,5 +1,5 @@
 ﻿
-INSERT INTO cities (city_id, name, state_id) VALUES
+INSERT INTO cities (id, name, state_id) VALUES
 (1, 'Bombuflat', 1),
 (2, 'Garacharma', 1),
 (3, 'Port Blair', 1),
@@ -37004,8 +37004,8 @@ INSERT INTO cities (city_id, name, state_id) VALUES
 (37002, 'Toljatti', 3051),
 (37003, 'Zhigulevsk', 3051),
 (37004, 'Togliatti', 3052),
-(37005, 'Saint Petersburg', 3053),
-(37006, 'Sankt Peterburg', 3053),
+(37005, 'Saint-Petersburg', 3053),
+(37006, 'Sankt-Peterburg', 3053),
 (37007, 'Arkadak', 3054),
 (37008, 'Atkarsk', 3054),
 (37009, 'Balakovo', 3054),
@@ -39367,7 +39367,7 @@ INSERT INTO cities (city_id, name, state_id) VALUES
 (39365, 'Igis', 3434),
 (39366, 'Landquart', 3434),
 (39367, 'Maienfeld', 3434),
-(39368, 'Sankt Moritz', 3434),
+(39368, ' Moritz', 3434),
 (39369, 'Heerbrugg', 3435),
 (39370, 'Delemont', 3436),
 (39371, 'Glovelier', 3436),

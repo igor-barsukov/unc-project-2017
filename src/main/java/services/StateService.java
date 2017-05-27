@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface StateService  extends CRUDService<State, Integer> {
     List<State>  getByCountryId(Integer countryId);
+    State findByName(String name);
 }

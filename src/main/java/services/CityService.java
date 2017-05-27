@@ -8,4 +8,7 @@ import java.util.List;
  */
 public interface CityService  extends CRUDService<City, Integer>{
     List<City> getByStateId(Integer stateId);
+    City findByName(String name);
+
+    City findByNameAndStateName(String name, String stateName);
 }

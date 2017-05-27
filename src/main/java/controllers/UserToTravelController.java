@@ -45,6 +45,9 @@ public class UserToTravelController {
             return new ResponseEntity("No UserToTravel found", HttpStatus.NOT_FOUND);
         }
         UserToTravel userToTravel = userToTravelService.get(new UserToTravelPK(user, travel));
+
+        if (userToTravel==null)
+            return new ResponseEntity("No UserToTravel found", HttpStatus.NOT_FOUND);
         return new ResponseEntity(userToTravel, HttpStatus.OK);
     }
 
@@ -80,18 +83,20 @@ public class UserToTravelController {
     @PostMapping(value = "/userToTravels")
     public ResponseEntity createUserToTravel(@RequestParam("travelId") Integer travelId,@RequestParam("userId") Integer userId ) {
 
-
         User user=userService.get(userId);
         if (user==null ) return new ResponseEntity("No user found", HttpStatus.NOT_FOUND);
         Travel travel=travelService.get(travelId);
+
         if (travel==null ) return new ResponseEntity("No travel found", HttpStatus.NOT_FOUND);
         Role role =roleService.getByName("user");
+        UserToTravel userToTravel= userToTravelService.get(new UserToTravelPK(user,travel));
+        if (userToTravel!=null) return new ResponseEntity("UserToTravel already exists", HttpStatus.CONFLICT);
         if (role==null){
             role=new Role();
             role.setName("user");
             roleService.addOrUpdate(role);
         }
-        UserToTravel userToTravel=new UserToTravel(user, travel, role);
+        userToTravel=new UserToTravel(user, travel, role);
         userToTravelService.addOrUpdate(userToTravel);
         return new ResponseEntity(userToTravel, HttpStatus.OK);
     }

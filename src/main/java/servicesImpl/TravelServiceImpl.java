@@ -41,4 +41,13 @@ public class TravelServiceImpl implements TravelService {
     public Travel get(Integer id) {
         return travelRepository.findOne(id);
     }
+
+    @Transactional
+    public List<Travel> getByCityId(Integer cityId) {
+        return travelRepository.getByCityId(cityId);
+    }
+    @Transactional
+    public List<Travel> getByStateId(Integer stateId) {
+        return travelRepository.getByStateId(stateId);
+    }
 }

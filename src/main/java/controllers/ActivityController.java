@@ -4,13 +4,15 @@ package controllers;
  * Created by acer-pc on 15.04.2017.
  */
 
+
 import models.Activity;
-import models.Travel;
+import models.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import services.ActivityService;
+import services.CityService;
 import services.TravelService;
 
 import java.util.List;
@@ -20,7 +22,6 @@ import java.util.List;
  */
 @RestController
 public class ActivityController {
-
     @Autowired
     private ActivityService activityService;
     @Autowired
@@ -50,9 +51,15 @@ public class ActivityController {
         return new ResponseEntity(activities, HttpStatus.OK);
     }
 
+
+
+
+
     @PostMapping(value = "/activities")
     public ResponseEntity createActivity(@RequestBody Activity activity) {
         activityService.addOrUpdate(activity);
+
+
         return new ResponseEntity(activity, HttpStatus.OK);
     }
 
@@ -78,6 +85,7 @@ public class ActivityController {
     public ResponseEntity updateActivity(@PathVariable Integer id, @RequestBody Activity activity) {
 
         activity = activityService.addOrUpdate(activity);
+
 
         if ( activity ==null) {
             return new ResponseEntity("No Activity found for ID " + id, HttpStatus.NOT_FOUND);

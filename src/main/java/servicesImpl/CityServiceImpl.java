@@ -39,4 +39,16 @@ public class CityServiceImpl implements CityService {
     public  List<City> getByStateId(Integer stateId){
         return  cityRepository.findByStateId(stateId);
     }
+
+    @Transactional
+    public City findByName(String name) {
+        return cityRepository.findByName(name);
+    }
+
+    @Transactional
+    public City findByNameAndStateName(String name, String stateName) {
+        return cityRepository.findByNameAndCountryName(name, stateName);
+    }
+
+
 }

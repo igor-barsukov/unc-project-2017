@@ -17,7 +17,7 @@ public class Movement {
     private Date endTime;
     private String startAddress;
     private String destinationAddress;
-    private BigInteger price;
+    private Double price;
     private Integer distance;
     private String description;
     private String ticket;
@@ -88,11 +88,11 @@ public class Movement {
 
     @Basic
     @Column(name = "price", nullable = true, precision = 0)
-    public BigInteger getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

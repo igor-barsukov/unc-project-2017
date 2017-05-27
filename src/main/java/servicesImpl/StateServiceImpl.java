@@ -39,4 +39,9 @@ public class StateServiceImpl implements StateService{
     public  List<State> getByCountryId(Integer countryId){
         return  stateRepository.findByCountryId(countryId);
     }
+
+    @Transactional
+    public State findByName(String name) {
+        return stateRepository.findByName(name);
+    }
 }
