@@ -32,16 +32,16 @@ RUN zip /opt/tomcat/webapps/unc.zip /WEB-INF/util.properties &&\
     mv /opt/tomcat/webapps/unc.zip //opt/tomcat/webapps/unc.war &&\
     rm -rf /opt/tomcat/webapps/ROOT &&\
 	rm -rf /tmp/unc-project.war
-  
+
 RUN chown -R tomcat:tomcat /opt/apache-tomcat-${TOMCAT_VERSION_FULL} && mkdir -p /data && chown -R tomcat:tomcat /data \
     && test "$(id tomcat)" = "uid=1000(tomcat) gid=1000(tomcat) groups=1000(tomcat)"
 
 COPY docker-setup.sh /
 RUN chmod 0755 /docker-setup.sh &&\
    /docker-setup.sh
-	
+
 # Define working directory.
-WORKDIR /data	
+WORKDIR /data
 VOLUME /data
 
 # Expose the default tomcat ports
