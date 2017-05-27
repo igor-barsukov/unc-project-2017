@@ -77,7 +77,7 @@ public class FileUploadController {
         MultipartFile multipartFile = file.getFile();
 
 
-        String uploadPath1 = "D:\\Новая папка\\target\\unc-project\\";
+        String uploadPath1 = "D:\\newcore\\target\\unc-project\\";
         String uploadPath2 = "assets\\img\\";
 
         String hash = sha256(multipartFile);

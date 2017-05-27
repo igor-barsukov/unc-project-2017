@@ -112,7 +112,7 @@ public class Album implements Serializable {
         this.travel = travel;
     }
 
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", cascade = CascadeType.REMOVE)
     public Collection<Photo> getPhotos() {
         return photos;
     }
