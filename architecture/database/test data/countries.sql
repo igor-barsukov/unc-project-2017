@@ -1,5 +1,5 @@
 ﻿INSERT INTO countries(
-            country_id, name)
+            id, name)
 VALUES
 (1,    'Afghanistan' ),
 (2,    'Albania' ),
