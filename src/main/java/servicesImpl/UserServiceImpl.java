@@ -26,7 +26,8 @@ public class UserServiceImpl implements UserService{
 
     @Transactional
     public User addOrUpdate(User user) {
-        return  userRepository.saveAndFlush(user);
+       user.setEmail(user.getEmail().toLowerCase());
+       return  userRepository.saveAndFlush(user);
     }
 
     @Transactional
@@ -56,7 +57,7 @@ public class UserServiceImpl implements UserService{
 
     @Transactional
     public User getByCredentials(String email, String password){
-        return userRepository.findByEmailAndPassword(email,password);
+        return userRepository.findByEmailAndPassword(email.toLowerCase(),password);
     }
 
 }

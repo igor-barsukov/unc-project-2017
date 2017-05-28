@@ -16,7 +16,6 @@ import java.util.Map;
 @Service
 public class MailServiceImpl  implements MailService{
 
-
     public static final String FROM = "from";
     public static final String TO = "to";
     public static final String SUBJECT = "subject";

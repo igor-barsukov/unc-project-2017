@@ -1,5 +1,6 @@
 package controllers;
 
+import models.City;
 import models.Country;
 import models.Travel;
 import models.User;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import services.MailService;
 import services.TravelService;
 import services.UserService;
-import java.util.List;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -29,8 +29,10 @@ public class MailController {
     static String subject="Join the trip!";
 
     //need to fix urls
-    static String tripUrl="http://localhost:8181/travels/";
-    static String registrationUrl="http://localhost:8181/registration/";
+    static String path="http://localhost:8181";
+    static String tripUrl=path+"/#/trip-planning/";
+    static String registrationUrl=path+"#/registered";
+    static String confirmUrl=path+"/sendEmail/confirm/";
 
     //user - sender
     @GetMapping("/sendEmail/travel={travelId}/user={userId}/{email:.+}")
@@ -51,10 +53,10 @@ public class MailController {
             name=user.getFirstName();
 
        String countries="";
-       if (travel.getCountries()!=null || travel.getCountries().size()>0 ){
+       if (travel.getCities()!=null || travel.getCities().size()>0 ){
            countries="to ";
-           for (Country country: travel.getCountries())
-              countries+= country.getName()+ ", ";
+           for (City city: travel.getCities())
+               countries+= city.getState().getCountry().getName()+ ", ";
            if (countries.length()>2)
                countries=countries.substring(0,countries.length()-2);
        }
@@ -76,5 +78,88 @@ public class MailController {
            return new ResponseEntity("Email was sent", HttpStatus.OK);
         else return new ResponseEntity("Error!", HttpStatus.METHOD_FAILURE);
     }
+
+    public Map<String, Object> setMap(String text, User user){
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("from", ourEmailName);
+        model.put("subject", subject);
+        model.put("to", user.getEmail());
+        model.put("ccList", new ArrayList<String>());
+        model.put("bccList", new ArrayList<String>());
+        model.put("text",text );
+        return model;
+    }
+
+    @GetMapping("/sendEmail/newUser={userId}")
+    public ResponseEntity sendAfterRegistration(@PathVariable("userId") Integer id){
+        User user=userService.get(id);
+
+        if (user==null) {
+            return new ResponseEntity("User was not found!", HttpStatus.NOT_FOUND);
+        }
+        String text=user.getFirstName()+", welcome to JourneyJoins!";
+        Map<String, Object> model=setMap(text, user);
+        boolean result = mailService.sendEmail("emailInfo.jsp", model);
+        if (result)
+            return new ResponseEntity("Email was" +
+                    "  sent", HttpStatus.OK);
+        else return new ResponseEntity("Error!", HttpStatus.METHOD_FAILURE);
+
+    }
+
+    @GetMapping("/sendEmail/user={userId}/{newEmail:.+}")
+    public ResponseEntity sendAfterRequestToChangeEmail(@PathVariable("userId") Integer id,@PathVariable("newEmail") String newEmail){
+        User user=userService.get(id);
+
+        if (user==null) {
+            return new ResponseEntity("User was not found!", HttpStatus.NOT_FOUND);
+        }
+        String text=user.getFirstName()+", your email is going to be changed to "+newEmail;
+
+        text+=". Click the button to confirm it!";
+        Map<String, Object> model=setMap(text, user);
+        model.put("confirmUrl", confirmUrl+"/user="+user.getId()+"/"+newEmail);
+        boolean result = mailService.sendEmail("emailConfirm.jsp", model);
+        if (result)
+            return new ResponseEntity("Email was" +
+                    "  sent", HttpStatus.OK);
+        else return new ResponseEntity("Error!", HttpStatus.METHOD_FAILURE);
+    }
+
+    @GetMapping("/sendEmail/confirm/user={userId}/{newEmail:.+}")
+    public ResponseEntity sendAfterChange(@PathVariable("userId") Integer id,@PathVariable("newEmail") String newEmail){
+        User user=userService.get(id);
+
+        if (user==null) {
+            return new ResponseEntity("User was not found!", HttpStatus.NOT_FOUND);
+        }
+
+        String text="Email was changed";
+        Map<String, Object> model=setMap(text, user);
+        user.setEmail(newEmail);
+        userService.addOrUpdate(user);
+        boolean result = mailService.sendEmail("emailInfo.jsp", model);
+        if (result)
+            return new ResponseEntity("Email was" +
+                    "  sent", HttpStatus.OK);
+        else return new ResponseEntity("Error!", HttpStatus.METHOD_FAILURE);
+    }
+    @GetMapping("/sendEmail/passwordChanged/user={userId}")
+    public ResponseEntity sendAfterPasswordChange(@PathVariable("userId") Integer id){
+        User user=userService.get(id);
+
+        if (user==null) {
+            return new ResponseEntity("User was not found!", HttpStatus.NOT_FOUND);
+        }
+        String text="Password was changed";
+        Map<String, Object> model=setMap(text, user);
+        boolean result = mailService.sendEmail("emailInfo.jsp", model);
+        if (result)
+            return new ResponseEntity("Email was" +
+                    "  sent", HttpStatus.OK);
+        else return new ResponseEntity("Error!", HttpStatus.METHOD_FAILURE);
+
+    }
+
 
 }
