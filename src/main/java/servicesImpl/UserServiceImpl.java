@@ -4,6 +4,7 @@ package servicesImpl;
  * Created by acer-pc on 08.03.2017.
  */
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import repositories.UserRepository;
 import models.User;
 
@@ -19,6 +20,9 @@ import services.UserService;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder bcryptEncoder;
 
     @Transactional
     public User addOrUpdate(User user) {

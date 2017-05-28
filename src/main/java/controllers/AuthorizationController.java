@@ -24,14 +24,23 @@ public class AuthorizationController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder bcryptEncoder;
+
     @PostMapping(value = "/users/login")
     public ResponseEntity createUser(@RequestBody Credentials credentials) {
-        if(userService.getByCredentials(credentials.getEmail(), credentials.getPassword())==null)
-  //  @PostMapping(value = "/users/login/{password}/{email:.+}")
-   // public ResponseEntity login(@PathVariable("email") String email, @PathVariable("password") String password) {
-         //   if(userService.getByCredentials(email, password)==null)
+        User user = userService.getByEmail(credentials.getEmail());
+//        System.out.println(bcryptEncoder.matches(credentials.getPassword(), user.getPassword()));
+        if(bcryptEncoder.matches(credentials.getPassword(), user.getPassword())){
+//        if(userService.getByCredentials(credentials.getEmail(), credentials.getPassword())==null) {
+            //  @PostMapping(value = "/users/login/{password}/{email:.+}")
+            // public ResponseEntity login(@PathVariable("email") String email, @PathVariable("password") String password) {
+            //   if(userService.getByCredentials(email, password)==null)
+            return new ResponseEntity(userService.getByEmail(credentials.getEmail()), HttpStatus.OK);
+        }
+        else {
             return new ResponseEntity("No User found for such credentials", HttpStatus.NOT_FOUND);
-        else return new ResponseEntity(userService.getByEmail(credentials.getEmail()), HttpStatus.OK);
+        }
     }
 
 }

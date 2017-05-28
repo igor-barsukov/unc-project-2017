@@ -104,7 +104,7 @@ public class User implements Serializable {
     }
 
     @Basic
-//    @JsonIgnore
+
     @Column(name = "password", nullable = false, length = 150)
     public String getPassword() {
         return password;

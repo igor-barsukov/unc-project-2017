@@ -28,52 +28,10 @@ public class FileUploadController {
     @Autowired
     ServletContext context;
 
-    @RequestMapping(value = "/fileUploadPage", method = RequestMethod.GET)
-    public ModelAndView fileUploadPage() {
-        FileModel file = new FileModel();
-        ModelAndView modelAndView = new ModelAndView("fileUpload", "command", file);
-        return modelAndView;
-    }
-
-//    @RequestMapping(value="/fileUploadPage", method = RequestMethod.POST)
-//    public String fileUpload(@Validated FileModel file, BindingResult result, ModelMap model) throws IOException, NoSuchAlgorithmException {
-//        if (result.hasErrors()) {
-//            System.out.println("validation errors");
-//            return "fileUploadPage";
-//        } else {
-//                //writeFile
-//                MultipartFile multipartFile = file.getFile();
-//                String uploadPath = "C:\\Program Files\\Apache Software Foundation\\Apache Tomcat 8.0.27\\images\\";
-//
-//                String hash = sha256(multipartFile);
-//
-//                FileCopyUtils.copy(file.getFile().getBytes(), new File(uploadPath + hash));
-//                String fileName = multipartFile.getOriginalFilename();
-//
-//                model.addAttribute("fileName", fileName);
-//                return "success";
-//            }
-//        }
-
-//    @RequestMapping(value="/fileUploadPage", method = RequestMethod.POST)
-//    public String fileUpload(@Validated FileModel file, ModelMap model) throws IOException, NoSuchAlgorithmException {
-//
-//        //writeFile
-//        MultipartFile multipartFile = file.getFile();
-//        String uploadPath = "C:\\Program Files\\Apache Software Foundation\\Apache Tomcat 8.0.27\\images\\";
-//
-//        String hash = sha256(multipartFile);
-//
-//        FileCopyUtils.copy(file.getFile().getBytes(), new File(uploadPath + hash));
-//
-//        //model.addAttribute("fileName", uploadPath + hash);
-//        return uploadPath + hash;
-//    }
-
-
     @RequestMapping(value="/fileUploadPage", method = RequestMethod.POST)
     public String fileUpload(FileModel file) throws IOException, NoSuchAlgorithmException {
         //writeFile
+        System.out.println(file.getFile());
         MultipartFile multipartFile = file.getFile();
 
 
