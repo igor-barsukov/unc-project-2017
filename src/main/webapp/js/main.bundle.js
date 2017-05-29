@@ -64,7 +64,7 @@ var Transport = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(272);
@@ -73,7 +73,7 @@ var Transport = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__ = __webpack_require__(998);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Subject__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Subject__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -466,18 +466,18 @@ var Day = (function () {
 
 /***/ }),
 
-/***/ 36:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_day_interface__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_activities_interface__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_movements_interface__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__http_service__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_album_interface__ = __webpack_require__(776);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_Observable__ = __webpack_require__(2);
@@ -932,7 +932,7 @@ var ProfilePhotosComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user_interface__ = __webpack_require__(781);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_city_interface__ = __webpack_require__(370);
@@ -1311,7 +1311,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(762);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__registered_registered_component__ = __webpack_require__(783);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sidebar_sidebar_component__ = __webpack_require__(784);
@@ -1341,13 +1341,13 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__account_profile_photos_profile_photos_component__ = __webpack_require__(758);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__account_trips_trips_component__ = __webpack_require__(760);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__account_profile_profile_component__ = __webpack_require__(759);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__guards_main_guard__ = __webpack_require__(770);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__guards_login_guard__ = __webpack_require__(769);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__map_map_component__ = __webpack_require__(774);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__messages_messages_component__ = __webpack_require__(775);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__trip_planning_participants_participants_component__ = __webpack_require__(792);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__created_trip_created_trip_component__ = __webpack_require__(766);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40_ngx_facebook__ = __webpack_require__(919);
@@ -1537,7 +1537,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_chatMessage_inerface__ = __webpack_require__(777);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2004,9 +2004,9 @@ var HomeComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_sight__ = __webpack_require__(779);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapComponent; });
@@ -2323,7 +2323,7 @@ var NotFoundComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_gender_interface__ = __webpack_require__(371);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_city_interface__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__models_role_interface__ = __webpack_require__(372);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_Observable__ = __webpack_require__(2);
@@ -2464,7 +2464,7 @@ var RegisteredComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(8);
@@ -2590,7 +2590,7 @@ var SidebarComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
@@ -2660,9 +2660,10 @@ var SignInComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_transport_interface__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BusDialogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2678,9 +2679,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+var URL = 'http://localhost:8181/fileUploadPage';
 var BusDialogComponent = (function () {
-    function BusDialogComponent(tripService) {
+    function BusDialogComponent(tripService, http, el) {
         this.tripService = tripService;
+        this.http = http;
+        this.el = el;
     }
     BusDialogComponent.prototype.ngOnInit = function () {
         this.bus = {
@@ -2719,16 +2724,41 @@ var BusDialogComponent = (function () {
             destination_coordinates: null
         };
     };
+    BusDialogComponent.prototype.upload = function () {
+        var _this = this;
+        var csrf_token = jQuery("meta[name='_csrf']").attr("content");
+        var csrf_token_name = jQuery("meta[name='_csrf_header']").attr("content");
+        var headers = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["Headers"]({});
+        if (csrf_token_name && csrf_token)
+            headers.set(csrf_token_name, csrf_token);
+        //locate the file element meant for the file upload.
+        var inputEl = this.el.nativeElement.querySelector('#photo');
+        //get the total amount of files attached to the file input.
+        var fileCount = inputEl.files.length;
+        //create a new fromdata instance
+        var formData = new FormData();
+        //check if the filecount is greater than zero, to be sure a file was selected.
+        if (fileCount > 0) {
+            //append the key name 'photo' with the first file in the element
+            formData.append('file', inputEl.files.item(0));
+            //call the angular http method
+            this.http
+                .post(URL, formData, { headers: headers })
+                .map(function (res) { return res.json(); }).subscribe(function (data) {
+                _this.pathToTicket = data;
+            });
+        }
+    };
     BusDialogComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-bus-dialog',
             template: __webpack_require__(979),
             styles: [__webpack_require__(943)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _c) || Object])
     ], BusDialogComponent);
     return BusDialogComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=C:/Users/qwerty/Desktop/projectunc/src/bus-dialog.component.js.map
 
@@ -2740,9 +2770,10 @@ var BusDialogComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_transport_interface__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarDialogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2758,9 +2789,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+var URL = 'http://localhost:8181/fileUploadPage';
 var CarDialogComponent = (function () {
-    function CarDialogComponent(tripService) {
+    function CarDialogComponent(tripService, http, el) {
         this.tripService = tripService;
+        this.http = http;
+        this.el = el;
     }
     CarDialogComponent.prototype.ngOnInit = function () {
         this.car = {
@@ -2782,7 +2817,7 @@ var CarDialogComponent = (function () {
     CarDialogComponent.prototype.addCar = function (model) {
         model.transport = new __WEBPACK_IMPORTED_MODULE_3__models_transport_interface__["a" /* Transport */](4, "car");
         console.log(model);
-        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, model.ticket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
+        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, this.pathToTicket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
         this.car = {
             id: null,
             transport: null,
@@ -2799,16 +2834,41 @@ var CarDialogComponent = (function () {
             destination_coordinates: null
         };
     };
+    CarDialogComponent.prototype.upload = function () {
+        var _this = this;
+        var csrf_token = jQuery("meta[name='_csrf']").attr("content");
+        var csrf_token_name = jQuery("meta[name='_csrf_header']").attr("content");
+        var headers = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["Headers"]({});
+        if (csrf_token_name && csrf_token)
+            headers.set(csrf_token_name, csrf_token);
+        //locate the file element meant for the file upload.
+        var inputEl = this.el.nativeElement.querySelector('#photo');
+        //get the total amount of files attached to the file input.
+        var fileCount = inputEl.files.length;
+        //create a new fromdata instance
+        var formData = new FormData();
+        //check if the filecount is greater than zero, to be sure a file was selected.
+        if (fileCount > 0) {
+            //append the key name 'photo' with the first file in the element
+            formData.append('file', inputEl.files.item(0));
+            //call the angular http method
+            this.http
+                .post(URL, formData, { headers: headers })
+                .map(function (res) { return res.json(); }).subscribe(function (data) {
+                _this.pathToTicket = data;
+            });
+        }
+    };
     CarDialogComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-car-dialog',
             template: __webpack_require__(980),
             styles: [__webpack_require__(944)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _c) || Object])
     ], CarDialogComponent);
     return CarDialogComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=C:/Users/qwerty/Desktop/projectunc/src/car-dialog.component.js.map
 
@@ -2973,9 +3033,10 @@ var DialogComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_transport_interface__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlightDialogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2991,9 +3052,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+var URL = 'http://localhost:8181/fileUploadPage';
 var FlightDialogComponent = (function () {
-    function FlightDialogComponent(tripService) {
+    function FlightDialogComponent(tripService, http, el) {
         this.tripService = tripService;
+        this.http = http;
+        this.el = el;
     }
     FlightDialogComponent.prototype.ngOnInit = function () {
         this.flight = {
@@ -3015,7 +3080,7 @@ var FlightDialogComponent = (function () {
     FlightDialogComponent.prototype.addFlight = function (model) {
         model.transport = new __WEBPACK_IMPORTED_MODULE_3__models_transport_interface__["a" /* Transport */](1, "plane");
         console.log(model);
-        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, model.ticket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0.0, 0.0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
+        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, this.pathToTicket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0.0, 0.0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
         this.flight = {
             id: null,
             transport: null,
@@ -3032,16 +3097,41 @@ var FlightDialogComponent = (function () {
             destination_coordinates: null
         };
     };
+    FlightDialogComponent.prototype.upload = function () {
+        var _this = this;
+        var csrf_token = jQuery("meta[name='_csrf']").attr("content");
+        var csrf_token_name = jQuery("meta[name='_csrf_header']").attr("content");
+        var headers = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["Headers"]({});
+        if (csrf_token_name && csrf_token)
+            headers.set(csrf_token_name, csrf_token);
+        //locate the file element meant for the file upload.
+        var inputEl = this.el.nativeElement.querySelector('#photo');
+        //get the total amount of files attached to the file input.
+        var fileCount = inputEl.files.length;
+        //create a new fromdata instance
+        var formData = new FormData();
+        //check if the filecount is greater than zero, to be sure a file was selected.
+        if (fileCount > 0) {
+            //append the key name 'photo' with the first file in the element
+            formData.append('file', inputEl.files.item(0));
+            //call the angular http method
+            this.http
+                .post(URL, formData, { headers: headers })
+                .map(function (res) { return res.json(); }).subscribe(function (data) {
+                _this.pathToTicket = data;
+            });
+        }
+    };
     FlightDialogComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-flight-dialog',
             template: __webpack_require__(983),
             styles: [__webpack_require__(947)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _c) || Object])
     ], FlightDialogComponent);
     return FlightDialogComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=C:/Users/qwerty/Desktop/projectunc/src/flight-dialog.component.js.map
 
@@ -3053,11 +3143,12 @@ var FlightDialogComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_activities_interface__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_coordinates_interface__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_activityType_interface__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LodgingComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3075,12 +3166,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+var URL = 'http://localhost:8181/fileUploadPage';
 var LodgingComponent = (function () {
-    function LodgingComponent(route, _location, tripService) {
+    function LodgingComponent(route, _location, tripService, http, el) {
         var _this = this;
         this.route = route;
         this._location = _location;
         this.tripService = tripService;
+        this.http = http;
+        this.el = el;
         this.routeSubscription = route.parent.params.subscribe(function (params) { return _this.tripId = params['id']; });
     }
     LodgingComponent.prototype.ngOnInit = function () {
@@ -3116,6 +3211,31 @@ var LodgingComponent = (function () {
             };
         }
     };
+    LodgingComponent.prototype.upload = function () {
+        var _this = this;
+        var csrf_token = jQuery("meta[name='_csrf']").attr("content");
+        var csrf_token_name = jQuery("meta[name='_csrf_header']").attr("content");
+        var headers = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["Headers"]({});
+        if (csrf_token_name && csrf_token)
+            headers.set(csrf_token_name, csrf_token);
+        //locate the file element meant for the file upload.
+        var inputEl = this.el.nativeElement.querySelector('#photo');
+        //get the total amount of files attached to the file input.
+        var fileCount = inputEl.files.length;
+        //create a new fromdata instance
+        var formData = new FormData();
+        //check if the filecount is greater than zero, to be sure a file was selected.
+        if (fileCount > 0) {
+            //append the key name 'photo' with the first file in the element
+            formData.append('file', inputEl.files.item(0));
+            //call the angular http method
+            this.http
+                .post(URL, formData, { headers: headers })
+                .map(function (res) { return res.json(); }).subscribe(function (data) {
+                _this.pathToTicket = data;
+            });
+        }
+    };
     LodgingComponent.prototype.backClick = function () {
         this._location.go("/trip-planning/" + this.tripId);
     };
@@ -3125,10 +3245,10 @@ var LodgingComponent = (function () {
             template: __webpack_require__(984),
             styles: [__webpack_require__(948)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_common__["Location"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_common__["Location"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_common__["Location"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_common__["Location"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_trip_service__["a" /* TripService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _e) || Object])
     ], LodgingComponent);
     return LodgingComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e;
 }());
 //# sourceMappingURL=C:/Users/qwerty/Desktop/projectunc/src/lodging.component.js.map
 
@@ -3139,10 +3259,10 @@ var LodgingComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParticipantsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3213,8 +3333,9 @@ var ParticipantsComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_transport_interface__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RailDialogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3230,9 +3351,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+var URL = 'http://localhost:8181/fileUploadPage';
 var RailDialogComponent = (function () {
-    function RailDialogComponent(tripService) {
+    function RailDialogComponent(tripService, http, el) {
         this.tripService = tripService;
+        this.http = http;
+        this.el = el;
     }
     RailDialogComponent.prototype.ngOnInit = function () {
         this.rail = {
@@ -3253,7 +3378,7 @@ var RailDialogComponent = (function () {
     };
     RailDialogComponent.prototype.addRail = function (model) {
         model.transport = new __WEBPACK_IMPORTED_MODULE_2__models_transport_interface__["a" /* Transport */](2, "rail");
-        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, model.ticket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
+        this.tripService.setMovementSubject(new __WEBPACK_IMPORTED_MODULE_1__models_movements_interface__["a" /* Movement */](model.id, model.transport, model.travel, new Date(model.startTime), new Date(model.endTime), model.startAddress, model.destinationAddress, model.price, model.distance, model.description, this.pathToTicket, new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0), new __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__["a" /* Coordinates */]("point", 0, 0)));
         this.rail = {
             id: null,
             transport: null,
@@ -3270,16 +3395,41 @@ var RailDialogComponent = (function () {
             destination_coordinates: null
         };
     };
+    RailDialogComponent.prototype.upload = function () {
+        var _this = this;
+        var csrf_token = jQuery("meta[name='_csrf']").attr("content");
+        var csrf_token_name = jQuery("meta[name='_csrf_header']").attr("content");
+        var headers = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["Headers"]({});
+        if (csrf_token_name && csrf_token)
+            headers.set(csrf_token_name, csrf_token);
+        //locate the file element meant for the file upload.
+        var inputEl = this.el.nativeElement.querySelector('#photo');
+        //get the total amount of files attached to the file input.
+        var fileCount = inputEl.files.length;
+        //create a new fromdata instance
+        var formData = new FormData();
+        //check if the filecount is greater than zero, to be sure a file was selected.
+        if (fileCount > 0) {
+            //append the key name 'photo' with the first file in the element
+            formData.append('file', inputEl.files.item(0));
+            //call the angular http method
+            this.http
+                .post(URL, formData, { headers: headers })
+                .map(function (res) { return res.json(); }).subscribe(function (data) {
+                _this.pathToTicket = data;
+            });
+        }
+    };
     RailDialogComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-rail-dialog',
             template: __webpack_require__(986),
             styles: [__webpack_require__(949)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_trip_service__["a" /* TripService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_trip_service__["a" /* TripService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _c) || Object])
     ], RailDialogComponent);
     return RailDialogComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=C:/Users/qwerty/Desktop/projectunc/src/rail-dialog.component.js.map
 
@@ -3290,7 +3440,7 @@ var RailDialogComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_activities_interface__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_activityType_interface__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_coordinates_interface__ = __webpack_require__(66);
@@ -3458,11 +3608,11 @@ var TransportationComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_http_service__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_day_interface__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_file_upload_ng2_file_upload__ = __webpack_require__(916);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_file_upload_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_file_upload_ng2_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_do__ = __webpack_require__(1001);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_do__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__ = __webpack_require__(272);
@@ -3835,7 +3985,7 @@ var TripPlanningComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_http_service__ = __webpack_require__(15);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InvitationInTripComponent; });
@@ -3904,7 +4054,7 @@ var InvitationInTripComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_trip_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_day_interface__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_activities_interface__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_movements_interface__ = __webpack_require__(67);
@@ -4771,14 +4921,14 @@ module.exports = "\r\n  <div class=\"container\">\r\n      <div class=\"alert al
 /***/ 979:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"trip-bus\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addBus(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"bus.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"bus.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"bus.destination_address\"/>\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"bus.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div>\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"bus.price\"/>\r\n            </div>\r\n            <div>\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"bus.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Ticket</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"bus.distance\"/>\r\n                <img src=\"{{pathToTicket}}\" height=\"50\" width=\"100\">\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"bus.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n\r\n    </form>\r\n</div>\r\n"
+module.exports = "<div class=\"trip-bus\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addBus(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"bus.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"bus.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"bus.destination_address\"/>\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"bus.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div>\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"bus.price\"/>\r\n            </div>\r\n            <div>\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"bus.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Ticket</label>\r\n                <input id = \"photo\" type=\"file\" (change)=\"upload()\"/>\r\n                <a target=\"_blank\"><img src=\"{{pathToTicket}}\" style=\"height: 50px; width: 100px\"/></a>\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"bus.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n\r\n    </form>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 980:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"trip-car\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addCar(f.value)\">\r\n\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n                <label>Pick-up Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"car.start_time\"/>\r\n                <label>Address</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Address\"\r\n                       [(ngModel)]=\"car.start_address\"/>\r\n            </div>\r\n\r\n            <div class=\"form-group to\">\r\n                <label>Drop-off Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"car.end_time\"/>\r\n                <label>Address</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Address\" [(ngModel)]=\"car.destination_address\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"price\">\r\n            <div class=\"form-group\">\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"car.price\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                      [(ngModel)]=\"car.description\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>"
+module.exports = "<div class=\"trip-car\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addCar(f.value)\">\r\n\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n                <label>Pick-up Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"car.start_time\"/>\r\n                <label>Address</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Address\"\r\n                       [(ngModel)]=\"car.start_address\"/>\r\n            </div>\r\n\r\n            <div class=\"form-group to\">\r\n                <label>Drop-off Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"car.end_time\"/>\r\n                <label>Address</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Address\" [(ngModel)]=\"car.destination_address\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"price\">\r\n            <div class=\"form-group\">\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"car.price\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div>\r\n            <label>Ticket</label>\r\n            <input id = \"photo\" type=\"file\" (change)=\"upload()\"/>\r\n            <a target=\"_blank\"><img src=\"{{pathToTicket}}\" style=\"height: 50px; width: 100px\"/></a>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                      [(ngModel)]=\"car.description\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>"
 
 /***/ }),
 
@@ -4799,14 +4949,14 @@ module.exports = "<div [@dialog] *ngIf=\"visible\" class=\"dialog\" style=\"padd
 /***/ 983:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"trip-flights\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addFlight(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"flight.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"flight.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"flight.destination_address\"/>\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"flight.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div >\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"flight.price\"/>\r\n            </div>\r\n            <div >\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"flight.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"flight.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n"
+module.exports = "<div class=\"trip-flights\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addFlight(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"flight.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"flight.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"flight.destination_address\"/>\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"flight.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div >\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"flight.price\"/>\r\n            </div>\r\n            <div >\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"flight.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Ticket</label>\r\n                <input id = \"photo\" type=\"file\" (change)=\"upload()\"/>\r\n                <a target=\"_blank\"><img src=\"{{pathToTicket}}\" style=\"height: 50px; width: 100px\"/></a>\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"flight.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 984:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n    <h4> Lodging</h4>\r\n</div>\r\n<div class=\"modal-body\" style=\"margin: 15px;\">\r\n    <div class=\"trip-lodging\">\r\n        <form class=\"form-horizontal\" style=\"margin-left:0px\" #f=\"ngForm\" novalidate (ngSubmit)=\"addLodging(f.value, f.valid)\">\r\n            <div class=\"address\">\r\n                <div class=\"form-group\">\r\n                    <label>Hotel</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"name\" minlength=\"2\" maxlength=\"20\" required\r\n                           placeholder=\"Name\"\r\n                           [(ngModel)]=\"lodging.name\" #name=\"ngModel\"/>\r\n                </div>\r\n\r\n                <div class=\"form-group hotel-address\">\r\n                    <label>Address</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"address\" minlength=\"2\" maxlength=\"30\"\r\n                           placeholder=\"Address\"\r\n                           [(ngModel)]=\"lodging.address\" #address=\"ngModel\"/>\r\n                </div>\r\n            </div>\r\n            <div class=\"from-to\">\r\n                <div class=\"form-group from\">\r\n                    <label>Check-in Time</label>\r\n                    <input class=\"form-control\" type=\"datetime-local\" name=\"startTime\" required\r\n                           placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"lodging.startTime\" #startTime=\"ngModel\"/>\r\n                </div>\r\n                <div class=\"form-group to\">\r\n                    <label>Check-out Time</label>\r\n                    <input class=\"form-control\" type=\"datetime-local\" name=\"endTime\" placeholder=\"2017-05-29T10:25:OOZ\"\r\n                           [(ngModel)]=\"lodging.endTime\" #endTime=\"ngModel\"/>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"price-dist\">\r\n                <div class=\"form-group\">\r\n                    <label>Price</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"5200\"\r\n                           [(ngModel)]=\"lodging.price\"/>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\" style=\"margin-top:10px\">\r\n                <button type=\"submit\"  class=\"btn btn-primary\">Save</button>\r\n            </div>\r\n\r\n        </form>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"modal-header\">\r\n    <h4> Lodging</h4>\r\n</div>\r\n<div class=\"modal-body\" style=\"margin: 15px;\">\r\n    <div class=\"trip-lodging\">\r\n        <form class=\"form-horizontal\" style=\"margin-left:0px\" #f=\"ngForm\" novalidate (ngSubmit)=\"addLodging(f.value, f.valid)\">\r\n            <div class=\"address\">\r\n                <div class=\"form-group\">\r\n                    <label>Hotel</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"name\" minlength=\"2\" maxlength=\"20\" required\r\n                           placeholder=\"Name\"\r\n                           [(ngModel)]=\"lodging.name\" #name=\"ngModel\"/>\r\n                </div>\r\n\r\n                <div class=\"form-group hotel-address\">\r\n                    <label>Address</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"address\" minlength=\"2\" maxlength=\"30\"\r\n                           placeholder=\"Address\"\r\n                           [(ngModel)]=\"lodging.address\" #address=\"ngModel\"/>\r\n                </div>\r\n            </div>\r\n            <div class=\"from-to\">\r\n                <div class=\"form-group from\">\r\n                    <label>Check-in Time</label>\r\n                    <input class=\"form-control\" type=\"datetime-local\" name=\"startTime\" required\r\n                           placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"lodging.startTime\" #startTime=\"ngModel\"/>\r\n                </div>\r\n                <div class=\"form-group to\">\r\n                    <label>Check-out Time</label>\r\n                    <input class=\"form-control\" type=\"datetime-local\" name=\"endTime\" placeholder=\"2017-05-29T10:25:OOZ\"\r\n                           [(ngModel)]=\"lodging.endTime\" #endTime=\"ngModel\"/>\r\n                </div>\r\n                <div>\r\n                    <label>Ticket</label>\r\n                    <input id = \"photo\" type=\"file\" (change)=\"upload()\"/>\r\n                    <a target=\"_blank\"><img src=\"{{pathToTicket}}\" style=\"height: 50px; width: 100px\"/></a>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"price-dist\">\r\n                <div class=\"form-group\">\r\n                    <label>Price</label>\r\n                    <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"5200\"\r\n                           [(ngModel)]=\"lodging.price\"/>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\" style=\"margin-top:10px\">\r\n                <button type=\"submit\"  class=\"btn btn-primary\">Save</button>\r\n            </div>\r\n\r\n        </form>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -4820,7 +4970,7 @@ module.exports = "<div class=\"modal-body\">\r\n  <div >\r\n    <header style=\"
 /***/ 986:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"trip-rail\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addRail(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"rail.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"rail.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"rail.destination_address\"/>\r\n\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"rail.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div>\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"rail.price\"/>\r\n            </div>\r\n            <div>\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"rail.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"rail.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n"
+module.exports = "<div class=\"trip-rail\">\r\n    <form class=\"form-horizontal\" #f=\"ngForm\" novalidate (ngSubmit)=\"addRail(f.value)\">\r\n        <div class=\"from-to\">\r\n            <div class=\"form-group from\">\r\n\r\n                <label>From</label>\r\n                <input class=\"form-control\" name=\"startAddress\" type=\"text\" maxlength=\"30\" required placeholder=\"Russia\"\r\n                       [(ngModel)]=\"rail.start_address\"/>\r\n\r\n                <label>Departure Time</label>\r\n                <input class=\"form-control\" name=\"startTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"rail.start_time\"/>\r\n            </div>\r\n            <div class=\"form-group to\">\r\n\r\n                <label>To</label>\r\n                <input class=\"form-control\" name=\"destinationAddress\" type=\"text\" maxlength=\"30\" required\r\n                       placeholder=\"Italy\" [(ngModel)]=\"rail.destination_address\"/>\r\n\r\n\r\n                <label>Arrival Time</label>\r\n                <input class=\"form-control\" name=\"endTime\" type=\"datetime-local\" required\r\n                       placeholder=\"2017-05-29T10:25:OOZ\" [(ngModel)]=\"rail.end_time\"/>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <div>\r\n                <label>Price</label>\r\n                <input class=\"form-control\" name=\"price\" type=\"text\" maxlength=\"5\" placeholder=\"5200\"\r\n                       [(ngModel)]=\"rail.price\"/>\r\n            </div>\r\n            <div>\r\n                <label>Distance</label>\r\n                <input class=\"form-control\" name=\"distance\" type=\"text\" maxlength=\"5\" placeholder=\"451\"\r\n                       [(ngModel)]=\"rail.distance\"/>\r\n            </div>\r\n            <div>\r\n                <label>Ticket</label>\r\n                <input id = \"photo\" type=\"file\" (change)=\"upload()\"/>\r\n                <a target=\"_blank\"><img src=\"{{pathToTicket}}\" style=\"height: 50px; width: 100px\"/></a>\r\n            </div>\r\n            <div>\r\n                <label>Description</label>\r\n                <textarea class=\"form-control\" style=\"width: 400px; resize: none\" maxlength=\"100\" name=\"description\"\r\n                          [(ngModel)]=\"rail.description\"></textarea>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"form-group\" style=\"margin-top: 10px; display:block\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n"
 
 /***/ }),
 
