@@ -34,9 +34,12 @@ public class FileUploadController {
         System.out.println(file.getFile());
         MultipartFile multipartFile = file.getFile();
 
-
-        String uploadPath1 = "D:\\unc-project-2017\\target\\unc-project\\";
-        String uploadPath2 = "assets\\img\\";
+//      for develop:
+//        String uploadPath1 = "D:\\unc-project-2017\\target\\unc-project\\";
+//        String uploadPath2 = "assets\\img\\";
+//      for deploy on linux server
+        String uploadPath1 = System.getProperty("catalina.home") + "/webapps/ROOT/";
+        String uploadPath2 = "assets/img/";
 
         String hash = sha256(multipartFile);
 
