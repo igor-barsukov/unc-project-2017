@@ -956,7 +956,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var URL = 'http://jj2017.ddns.net/';
+var URL = 'http://jj2017.ddns.net/fileUploadPage';
 var newEmail = (function () {
     function newEmail() {
     }
@@ -3650,7 +3650,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var URL = 'http://jj2017.ddns.net/';
+var URL = 'http://jj2017.ddns.net/fileUploadPage';
 var TripPlanningComponent = (function () {
     function TripPlanningComponent(_location, httpService, route, tripService, http, el) {
         var _this = this;
