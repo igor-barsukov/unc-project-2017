@@ -104,7 +104,6 @@ public class User implements Serializable {
     }
 
     @Basic
-
     @Column(name = "password", nullable = false, length = 150)
     public String getPassword() {
         return password;

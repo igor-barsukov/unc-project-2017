@@ -157,7 +157,7 @@ public class Travel implements Serializable {
         this.albums = albums;
     }
 
-    @OneToMany(mappedBy = "travel")
+    @OneToMany(mappedBy = "travel",  cascade = CascadeType.REMOVE)
     public Collection<ChatTravel> getChats() {
         return chats;
     }
